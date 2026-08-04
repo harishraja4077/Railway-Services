@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Page not found - the train you were looking for has departed. Navigate back to Railway Services.">
+  <title>404 Not Found | Railway Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-train"><i class="fa-solid fa-train-subway"></i></div>
+    <div class="preloader-track"><span></span></div>
+    <p>All Aboard...</p>
+  </div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="container">
+      <span><i class="fa-brands fa-whatsapp"></i> WhatsApp: +91 70107 92745</span>
+      <span class="right">
+        <a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="404.html"><i class="fa-brands fa-twitter"></i></a>
+        <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+        <a href="404.html"><i class="fa-brands fa-youtube"></i></a>
+      </span>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <img src="images/logo.webp" alt="Railway Services" class="brand-img">
+      </a>
+      
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 404 SECTION -->
+  <section class="error-section">
+    <div class="container">
+      <div class="error-box">
+        <span class="error-train"><i class="fa-solid fa-train"></i></span>
+        <div class="error-code">404</div>
+        <h1>Oops! This Train Has Left The Station</h1>
+        <p>The page you're looking for doesn't exist, may have been moved, or is on a very long waitlist. Let's get you back on track.</p>
+
+        <div class="error-actions">
+          <a href="index.html" class="btn btn-navy"><i class="fa-solid fa-house"></i> Back To Home</a>
+          <a href="#" class="btn btn-ghost" id="goBackBtn"><i class="fa-solid fa-rotate-left"></i> Go Back</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+
+  <button class="to-top" id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

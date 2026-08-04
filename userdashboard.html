@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your Railway Services dashboard - manage bookings, track journeys, order food, and earn loyalty rewards.">
+  <title>User Dashboard | Railway Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="dash-body">
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-train"><i class="fa-solid fa-train-subway"></i></div>
+    <div class="preloader-track"><span></span></div>
+    <p>All Aboard...</p>
+  </div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <div class="dash-shell">
+
+    <!-- SIDEBAR -->
+    <aside class="dash-sidebar" id="dashSidebar">
+      <a href="index.html" class="dash-brand">
+        <img src="images/logo.webp" alt="Railway Services" class="brand-img">
+      </a>
+
+      <nav class="dash-nav">
+        <span class="dash-nav-label">Menu</span>
+        <a class="dash-link active" data-view="overview"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
+        <a class="dash-link" data-view="bookings"><i class="fa-solid fa-ticket"></i> My Bookings</a>
+        <a class="dash-link" data-view="book"><i class="fa-solid fa-train-subway"></i> Book Ticket</a>
+        <a class="dash-link" data-view="profile"><i class="fa-solid fa-user"></i> My Profile</a>
+        <a class="dash-link" data-view="support"><i class="fa-solid fa-headset"></i> Help &amp; Support</a>
+        <span class="dash-nav-label">General</span>
+        <a class="dash-link" href="index.html"><i class="fa-solid fa-house"></i> Back to Site</a>
+      </nav>
+
+      <div class="dash-sidebar-foot">
+        <div class="dash-mini-user">
+          <img src="images/passengers-platform.webp" alt="Priya Sharma">
+          <div>
+            <strong>Priya Sharma</strong>
+            <span>Silver Member</span>
+          </div>
+        </div>
+        <button class="dash-logout" id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+      </div>
+    </aside>
+
+    <div class="dash-overlay" id="dashOverlay"></div>
+
+    <!-- MAIN COLUMN -->
+    <main class="dash-main">
+
+      <header class="dash-topbar">
+        <div class="dash-topbar-title">
+          <button class="dash-menu" id="dashMenu" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+          </button>
+          <div>
+            <h2 id="topbarTitle">Dashboard</h2>
+            <p id="topbarSub">Welcome back, Priya</p>
+          </div>
+        </div>
+
+        <div class="dash-actions">
+          <div class="dash-notif">
+            <button class="dash-icon-btn" id="notifToggle" aria-label="Notifications">
+              <i class="fa-regular fa-bell"></i>
+              <span class="dash-dot"></span>
+            </button>
+            <div class="notif-panel" id="notifPanel">
+              <div class="notif-item">
+                <div class="notif-ico"><i class="fa-solid fa-circle-check"></i></div>
+                <div>
+                  <strong>Ticket Confirmed</strong>
+                  <p>PNR 4481-2765-1932 (Delhi → Mumbai) is confirmed.</p>
+                  <time>10 min ago</time>
+                </div>
+              </div>
+              <div class="notif-item">
+                <div class="notif-ico"><i class="fa-solid fa-bowl-food"></i></div>
+                <div>
+                  <strong>Meal Upgrade</strong>
+                  <p>Your veg thali has been upgraded to premium on train 12951.</p>
+                  <time>2 hrs ago</time>
+                </div>
+              </div>
+              <div class="notif-item">
+                <div class="notif-ico"><i class="fa-solid fa-gift"></i></div>
+                <div>
+                  <strong>Loyalty Reward</strong>
+                  <p>You earned 120 reward points for your last journey.</p>
+                  <time>Yesterday</time>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#profile" class="dash-link" data-view="profile" style="padding:0;border:none;background:none">
+            <img src="images/passengers-platform.webp" alt="Priya Sharma" class="dash-avatar">
+          </a>
+        </div>
+      </header>
+
+      <div class="dash-content">
+
+        <!-- ============ OVERVIEW ============ -->
+        <section class="view active" id="view-overview">
+          <div class="dash-greet reveal">
+            <div>
+              <h1>Hello, <span>Priya</span> 👋</h1>
+              <p>Here's what's happening with your journeys.</p>
+            </div>
+            <a href="404.html" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Book New Ticket</a>
+          </div>
+
+          <div class="stat-grid">
+            <div class="stat-card reveal">
+              <div class="stat-ico ico-blue"><i class="fa-solid fa-suitcase-rolling"></i></div>
+              <div>
+                <h3><span data-count="2">0</span></h3>
+                <p>Upcoming Trips</p>
+                <small class="up"><i class="fa-solid fa-arrow-trend-up"></i> Next in 3 days</small>
+              </div>
+            </div>
+            <div class="stat-card reveal">
+              <div class="stat-ico ico-green"><i class="fa-solid fa-ticket"></i></div>
+              <div>
+                <h3><span data-count="14">0</span></h3>
+                <p>Total Bookings</p>
+                <small class="up"><i class="fa-solid fa-arrow-trend-up"></i> +3 this month</small>
+              </div>
+            </div>
+            <div class="stat-card reveal">
+              <div class="stat-ico ico-orange"><i class="fa-solid fa-medal"></i></div>
+              <div>
+                <h3><span data-count="1240">0</span></h3>
+                <p>Reward Points</p>
+                <small class="up"><i class="fa-solid fa-arrow-trend-up"></i> 760 to Gold</small>
+              </div>
+            </div>
+            <div class="stat-card reveal">
+              <div class="stat-ico ico-violet"><i class="fa-solid fa-wallet"></i></div>
+              <div>
+                <h3>₹<span data-count="3250">0</span></h3>
+                <p>Wallet Balance</p>
+                <small class="down"><i class="fa-solid fa-arrow-trend-down"></i> Last top-up Aug 01</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="quick-grid">
+            <a href="404.html" class="quick-card reveal" data-goto="book"><i class="fa-solid fa-train"></i><h4>Book Tickets</h4><p>Plan your next journey</p></a>
+            <a href="404.html" class="quick-card reveal" data-goto="bookings"><i class="fa-solid fa-list-check"></i><h4>View Bookings</h4><p>Check PNR &amp; status</p></a>
+            <a href="404.html" class="quick-card reveal"><i class="fa-solid fa-utensils"></i><h4>Order Food</h4><p>Meals to your seat</p></a>
+            <a href="404.html" class="quick-card reveal" data-goto="support"><i class="fa-solid fa-headset"></i><h4>Get Help</h4><p>24x7 live assistance</p></a>
+          </div>
+
+          <div class="dash-grid">
+            <div class="panel reveal">
+              <div class="panel-head">
+                <h3><i class="fa-solid fa-suitcase-rolling"></i> Next Journey</h3>
+                <a href="404.html" data-goto="bookings">View all</a>
+              </div>
+              <div class="panel-body">
+                <div class="trip-card">
+                  <h3><i class="fa-solid fa-train-subway"></i> 12951 – Mumbai Rajdhani</h3>
+                  <div class="trip-timeline">
+                    <div class="tl-item">
+                      <strong>New Delhi (NDLS)</strong>
+                      <span>Aug 06 · 16:55 · Platform 5</span>
+                    </div>
+                    <div class="tl-item">
+                      <strong>Mumbai Central (BCT)</strong>
+                      <span>Aug 07 · 08:15 · 1st AC, Coach B2</span>
+                    </div>
+                  </div>
+                  <div class="trip-countdown" id="tripCountdown">
+                    <div class="cd-box"><strong id="cdDays">--</strong><span>Days</span></div>
+                    <div class="cd-box"><strong id="cdHours">--</strong><span>Hours</span></div>
+                    <div class="cd-box"><strong id="cdMins">--</strong><span>Mins</span></div>
+                    <div class="cd-box"><strong id="cdSecs">--</strong><span>Secs</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel reveal">
+              <div class="panel-head">
+                <h3><i class="fa-solid fa-medal"></i> Loyalty Progress</h3>
+                <a href="404.html" data-goto="profile">Details</a>
+              </div>
+              <div class="panel-body">
+                <div class="progress-wrap">
+                  <div class="progress-top"><span>Silver → Gold</span><span>760 pts needed</span></div>
+                  <div class="progress-track"><div class="progress-fill" data-progress="65"></div></div>
+                </div>
+                <div class="progress-wrap">
+                  <div class="progress-top"><span>Points earned this year</span><span>1,240 pts</span></div>
+                  <div class="progress-track"><div class="progress-fill" data-progress="45"></div></div>
+                </div>
+                <div class="progress-wrap" style="margin-bottom:0">
+                  <div class="progress-top"><span>Journeys completed</span><span>12 / 20</span></div>
+                  <div class="progress-track"><div class="progress-fill" data-progress="60"></div></div>
+                </div>
+                <p style="font-size:0.8rem;color:var(--text-light);margin-top:16px"><i class="fa-solid fa-circle-info"></i> Redeem points for free upgrades, lounge access &amp; meal vouchers.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel reveal">
+            <div class="panel-head">
+              <h3><i class="fa-solid fa-clock-rotate-left"></i> Recent Bookings</h3>
+              <a href="404.html" data-goto="bookings">View all bookings</a>
+            </div>
+            <div class="table-scroll">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>PNR</th>
+                    <th>Train</th>
+                    <th>Route</th>
+                    <th>Date</th>
+                    <th>Class</th>
+                    <th>Fare</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="pnr">4481-2765-1932</td>
+                    <td class="train-name">Mumbai Rajdhani</td>
+                    <td><span class="route-cell">NDLS <span class="route-line"></span> BCT</span></td>
+                    <td>06 Aug 2026</td>
+                    <td>1st AC</td>
+                    <td>₹3,455</td>
+                    <td><span class="dash-badge badge-blue">Confirmed</span></td>
+                  </tr>
+                  <tr>
+                    <td class="pnr">4473-1187-9902</td>
+                    <td class="train-name">Vande Bharat</td>
+                    <td><span class="route-cell">NDLS <span class="route-line"></span> KGP</span></td>
+                    <td>18 Aug 2026</td>
+                    <td>CC</td>
+                    <td>₹1,890</td>
+                    <td><span class="dash-badge badge-green">Confirmed</span></td>
+                  </tr>
+                  <tr>
+                    <td class="pnr">4412-9053-6610</td>
+                    <td class="train-name">Shatabdi Express</td>
+                    <td><span class="route-cell">NDLS <span class="route-line"></span> CDG</span></td>
+                    <td>02 Jul 2026</td>
+                    <td>CC</td>
+                    <td>₹1,045</td>
+                    <td><span class="dash-badge badge-grey">Completed</span></td>
+                  </tr>
+                  <tr>
+                    <td class="pnr">4408-6320-1145</td>
+                    <td class="train-name">Kashi Vishwanath Exp</td>
+                    <td><span class="route-cell">DLI <span class="route-line"></span> BSB</span></td>
+                    <td>21 Jun 2026</td>
+                    <td>3rd AC</td>
+                    <td>₹1,220</td>
+                    <td><span class="dash-badge badge-grey">Completed</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ MY BOOKINGS ============ -->
+        <section class="view" id="view-bookings">
+          <div class="dash-greet reveal">
+            <div>
+              <h1>My <span>Bookings</span></h1>
+              <p>Track, cancel or print your train tickets.</p>
+            </div>
+          </div>
+
+          <div class="panel reveal">
+            <div class="panel-head">
+              <div class="dash-filters">
+                <button class="filter-chip active" data-filter="all">All</button>
+                <button class="filter-chip" data-filter="upcoming">Upcoming</button>
+                <button class="filter-chip" data-filter="completed">Completed</button>
+                <button class="filter-chip" data-filter="cancelled">Cancelled</button>
+              </div>
+              <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="bookingSearch" placeholder="Search PNR or train...">
+              </div>
+            </div>
+            <div class="table-scroll">
+              <table class="dash-table" id="bookingsTable">
+                <thead>
+                  <tr>
+                    <th>PNR</th>
+                    <th>Train</th>
+                    <th>Route</th>
+                    <th>Date</th>
+                    <th>Class</th>
+                    <th>Passengers</th>
+                    <th>Fare</th>
+                    <th>Status</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr data-status="upcoming">
+                    <td class="pnr">4481-2765-1932</td>
+                    <td class="train-name">Mumbai Rajdhani</td>
+                    <td><span class="route-cell">NDLS <span class="route-line"></span> BCT</span></td>
+                    <td>06 Aug 2026</td>
+                    <td>1st AC</td>
+                    <td>2</td>
+                    <td>₹3,455</td>
+                    <td><span class="dash-badge badge-blue">Confirmed</span></td>
+                    <td><button class="btn btn-outline cancel-btn" style="padding:6px 14px;font-size:0.78rem">Cancel</button></td>
+                  </tr>
+                  <tr data-status="upcoming">
+                    <td class="pnr">4473-1187-9902</td>
+                    <td class="train-name">Vande Bharat</td>
+                    <td><span class="route-cell">NDLS <span class="route-line"></span> KGP</span></td>
+                    <td>18 Aug 2026</td>
+                    <td>CC</td>
+                    <td>1</td>
+                    <td>₹1,890</td>
+                    <td><span class="dash-badge badge-green">Confirmed</span></td>
+                    <td><button class="btn btn-outline cancel-btn" style="padding:6px 14px;font-size:0.78rem">Cancel</button></td>
+                  </tr>
+                  <tr data-status="upcoming">
+                    <td class="pnr">4470-2210-8846</td>
+                    <td class="train-name">Duronto Express</td>
+                    <td><span class="route-cell">NDLS <span class="route-line"></span> PNBE</span></td>
+                    <td>28 Aug 2026</td>
+                    <td>3rd AC</td>
+                    <td>3</td>
+                    <td>₹2,610</td>
+                    <td><span class="dash-badge badge-orange">WL 12</span></td>
+                    <td><button class="btn btn-outline cancel-btn" style="padding:6px 14px;font-size:0.78rem">Cancel</button></td>
+                  </tr>
+                  <tr data-status="completed">
+                    <td class="pnr">4412-9053-6610</td>
+                    <td class="train-name">Shatabdi Express</td>
+                    <td><span class="route-cell">NDLS <span class="route-line"></span> CDG</span></td>
+                    <td>02 Jul 2026</td>
+                    <td>CC</td>
+                    <td>2</td>
+                    <td>₹1,045</td>
+                    <td><span class="dash-badge badge-grey">Completed</span></td>
+                    <td><button class="btn btn-outline" style="padding:6px 14px;font-size:0.78rem">Reprint</button></td>
+                  </tr>
+                  <tr data-status="completed">
+                    <td class="pnr">4408-6320-1145</td>
+                    <td class="train-name">Kashi Vishwanath Exp</td>
+                    <td><span class="route-cell">DLI <span class="route-line"></span> BSB</span></td>
+                    <td>21 Jun 2026</td>
+                    <td>3rd AC</td>
+                    <td>1</td>
+                    <td>₹1,220</td>
+                    <td><span class="dash-badge badge-grey">Completed</span></td>
+                    <td><button class="btn btn-outline" style="padding:6px 14px;font-size:0.78rem">Reprint</button></td>
+                  </tr>
+                  <tr data-status="cancelled">
+                    <td class="pnr">4389-7741-0063</td>
+                    <td class="train-name">Garib Rath</td>
+                    <td><span class="route-cell">NDLS <span class="route-line"></span> NGP</span></td>
+                    <td>10 May 2026</td>
+                    <td>3rd AC</td>
+                    <td>2</td>
+                    <td>₹1,980</td>
+                    <td><span class="dash-badge badge-red">Cancelled</span></td>
+                    <td><button class="btn btn-outline" style="padding:6px 14px;font-size:0.78rem">Refunded</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ BOOK TICKET ============ -->
+        <section class="view" id="view-book">
+          <div class="dash-greet reveal">
+            <div>
+              <h1>Book a <span>Ticket</span></h1>
+              <p>Find and reserve your next journey in seconds.</p>
+            </div>
+          </div>
+
+          <div class="dash-grid">
+            <div class="panel reveal">
+              <div class="panel-head"><h3><i class="fa-solid fa-magnifying-glass-location"></i> Journey Details</h3></div>
+              <div class="panel-body">
+                <form class="dash-form" id="dashBookForm">
+                  <div class="form-2col">
+                    <div class="form-group">
+                      <label for="bfrom">From</label>
+                      <input type="text" id="bfrom" value="New Delhi" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="bto">To</label>
+                      <input type="text" id="bto" value="Mumbai" required>
+                    </div>
+                  </div>
+                  <div class="form-2col">
+                    <div class="form-group">
+                      <label for="bdate">Journey Date</label>
+                      <input type="date" id="bdate" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="bclass">Class</label>
+                      <select id="bclass">
+                        <option>1st AC</option>
+                        <option>2nd AC</option>
+                        <option>3rd AC</option>
+                        <option>Sleeper</option>
+                        <option>CC</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="bpass">Passengers</label>
+                    <select id="bpass">
+                      <option>1 Passenger</option>
+                      <option selected>2 Passengers</option>
+                      <option>3 Passengers</option>
+                      <option>4 Passengers</option>
+                      <option>5 Passengers</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="checkbox" style="display:flex;align-items:center;gap:9px;cursor:pointer;color:var(--text);font-size:0.88rem">
+                      <input type="checkbox" id="bpref" checked>
+                      <span>Use my saved seat &amp; food preferences</span>
+                    </label>
+                  </div>
+                  <button type="submit" class="btn btn-primary" style="width:100%"><i class="fa-solid fa-magnifying-glass"></i> Search Trains</button>
+                  <p class="form-status" id="bookStatus"></p>
+                </form>
+              </div>
+            </div>
+
+            <div class="panel reveal">
+              <div class="panel-head"><h3><i class="fa-solid fa-lightbulb"></i> Quick Tips</h3></div>
+              <div class="panel-body">
+                <div class="ticket-item">
+                  <div>
+                    <h4><i class="fa-solid fa-1" style="color:var(--accent)"></i> Book early, save more</h4>
+                    <p>Tatkal not required — book 30+ days ahead for best fares.</p>
+                  </div>
+                </div>
+                <div class="ticket-item">
+                  <div>
+                    <h4><i class="fa-solid fa-2" style="color:var(--accent)"></i> Free cancellation</h4>
+                    <p>Full refund up to 48 hrs before departure on flexi fares.</p>
+                  </div>
+                </div>
+                <div class="ticket-item">
+                  <div>
+                    <h4><i class="fa-solid fa-3" style="color:var(--accent)"></i> Meal on board</h4>
+                    <p>Pre-book meals from IRCTC-approved caterers with your ticket.</p>
+                  </div>
+                </div>
+                <div class="ticket-item" style="border-bottom:none;padding-bottom:4px">
+                  <div>
+                    <h4><i class="fa-solid fa-4" style="color:var(--accent)"></i> Loyalty points</h4>
+                    <p>Earn 10 points per ₹100 spent on every confirmed booking.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ PROFILE ============ -->
+        <section class="view" id="view-profile">
+          <div class="dash-greet reveal">
+            <div>
+              <h1>My <span>Profile</span></h1>
+              <p>Manage your account and travel preferences.</p>
+            </div>
+          </div>
+
+          <div class="panel reveal">
+            <div class="panel-head"><h3><i class="fa-solid fa-id-card"></i> Personal Information</h3></div>
+            <div class="panel-body">
+              <div class="profile-row">
+                <img src="images/passengers-platform.webp" alt="Priya Sharma">
+                <div>
+                  <h3>Priya Sharma</h3>
+                  <p><i class="fa-solid fa-envelope"></i> priya.sharma@gmail.com</p>
+                  <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+                </div>
+              </div>
+
+              <div class="profile-meta">
+                <div class="meta-card"><strong>Silver</strong><span>Membership Tier</span></div>
+                <div class="meta-card"><strong>14</strong><span>Journeys Completed</span></div>
+                <div class="meta-card"><strong>Since 2021</strong><span>Member Since</span></div>
+              </div>
+
+              <form class="dash-form" id="profileForm">
+                <div class="form-2col">
+                  <div class="form-group">
+                    <label for="pfName">Full Name</label>
+                    <input type="text" id="pfName" value="Priya Sharma">
+                  </div>
+                  <div class="form-group">
+                    <label for="pfEmail">Email Address</label>
+                    <input type="email" id="pfEmail" value="priya.sharma@gmail.com">
+                  </div>
+                </div>
+                <div class="form-2col">
+                  <div class="form-group">
+                    <label for="pfPhone">Mobile Number</label>
+                    <input type="tel" id="pfPhone" value="+91 98765 43210">
+                  </div>
+                  <div class="form-group">
+                    <label for="pfBerth">Preferred Berth</label>
+                    <select id="pfBerth">
+                      <option>Lower Berth</option>
+                      <option selected>Middle Berth</option>
+                      <option>Upper Berth</option>
+                      <option>Side Lower</option>
+                      <option>Window Seat</option>
+                    </select>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Save Changes</button>
+                <p class="form-status" id="profileStatus"></p>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ SUPPORT ============ -->
+        <section class="view" id="view-support">
+          <div class="dash-greet reveal">
+            <div>
+              <h1>Help &amp; <span>Support</span></h1>
+              <p>We're here 24x7 — reach us any way you like.</p>
+            </div>
+          </div>
+
+          <div class="dash-grid">
+            <div class="panel reveal">
+              <div class="panel-head"><h3><i class="fa-solid fa-headset"></i> Raise a Ticket</h3></div>
+              <div class="panel-body">
+                <form class="dash-form" id="supportForm">
+                  <div class="form-group">
+                    <label for="stopic">Topic</label>
+                    <select id="stopic">
+                      <option>Refund / Cancellation</option>
+                      <option>Booking Help</option>
+                      <option>Food &amp; Catering</option>
+                      <option>Lost &amp; Found</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="smsg">Describe your issue</label>
+                    <textarea id="smsg" placeholder="Tell us what happened and how we can help..."></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Submit Ticket</button>
+                  <p class="form-status" id="supportStatus"></p>
+                </form>
+              </div>
+            </div>
+
+            <div class="panel reveal">
+              <div class="panel-head"><h3><i class="fa-solid fa-phone-volume"></i> Contact Channels</h3></div>
+              <div class="panel-body">
+                <div class="ticket-item">
+                  <div>
+                    <h4><i class="fa-brands fa-whatsapp" style="color:var(--accent)"></i> WhatsApp</h4>
+                    <p>+91 70107 92745</p>
+                  </div>
+                </div>
+                <div class="ticket-item">
+                  <div>
+                    <h4><i class="fa-solid fa-envelope" style="color:var(--accent)"></i> Email</h4>
+                    <p>info@thestackly.com</p>
+                  </div>
+                </div>
+                <div class="ticket-item">
+                  <div>
+                    <h4><i class="fa-solid fa-comments" style="color:var(--accent)"></i> Live Chat</h4>
+                    <p>Average response time under 2 minutes</p>
+                  </div>
+                </div>
+                <div class="ticket-item" style="border-bottom:none">
+                  <div>
+                    <h4><i class="fa-solid fa-circle-question" style="color:var(--accent)"></i> FAQs</h4>
+                    <p>Visit our <a href="404.html" style="color:var(--accent);font-weight:600">help centre</a> for quick answers.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel reveal">
+            <div class="panel-head"><h3><i class="fa-solid fa-receipt"></i> Recent Support Tickets</h3></div>
+            <div class="table-scroll">
+              <table class="dash-table">
+                <thead>
+                  <tr><th>Ticket</th><th>Topic</th><th>Raised</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="pnr">TKT-88241</td>
+                    <td>Refund for cancelled PNR 4389-7741</td>
+                    <td>14 Jul 2026</td>
+                    <td><span class="dash-badge badge-green">Resolved</span></td>
+                  </tr>
+                  <tr>
+                    <td class="pnr">TKT-90110</td>
+                    <td>Meal preference not saved on 12951</td>
+                    <td>28 Jul 2026</td>
+                    <td><span class="dash-badge badge-orange">In Progress</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+  
+
+  <div class="dash-toasts" id="dashToasts"></div>
+
+  <script src="js/script.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

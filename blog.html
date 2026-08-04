@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Railway travel blog - scenic routes, booking tips, onboard food guides, and more from Railway Services.">
+  <title>Blog | Railway Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-train"><i class="fa-solid fa-train-subway"></i></div>
+    <div class="preloader-track"><span></span></div>
+    <p>All Aboard...</p>
+  </div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="container">
+      <span><i class="fa-brands fa-whatsapp"></i> WhatsApp: +91 70107 92745</span>
+      <span class="right">
+        <a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="404.html"><i class="fa-brands fa-twitter"></i></a>
+        <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+        <a href="404.html"><i class="fa-brands fa-youtube"></i></a>
+      </span>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <img src="images/logo.webp" alt="Railway Services" class="brand-img">
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="contact.html">Contact</a>
+        <div class="nav-auth">
+          <a href="signin.html" class="nav-btn nav-ghost"><i class="fa-solid fa-right-to-bracket"></i> Sign In</a>
+          <a href="signup.html" class="nav-btn nav-solid"><i class="fa-solid fa-user-plus"></i> Sign Up</a>
+        </div>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- SECTION 1 : PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>The Railway <span>Blog</span></h1>
+      <nav class="breadcrumb">
+        <a href="index.html">Home</a> <i class="fa-solid fa-angle-right"></i> <span>Blog</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- SECTION 2 : FEATURED POST -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">Featured Story</span>
+        <h2>Editor's <span>Pick</span></h2>
+      </div>
+      <article class="featured-post reveal">
+        <div class="media">
+          <img src="images/mountain-train.webp" alt="Scenic mountain railway journey">
+        </div>
+        <div class="content">
+          <span class="cat">Special Feature</span>
+          <h2>The Magic Of India's Iconic Toy Trains: A Journey Through The Clouds</h2>
+          <div class="blog-meta">
+            <span><i class="fa-regular fa-calendar"></i> August 02, 2026</span>
+            <span><i class="fa-regular fa-user"></i> By R. Harish</span>
+            <span><i class="fa-regular fa-comment"></i> 46</span>
+          </div>
+          <p>From the UNESCO-listed Darjeeling Himalayan Railway to the Kalka–Shimla line, these engineering marvels wind through misty mountains and offer a glimpse into a slower, more romantic era of travel. Here's everything you need to plan the trip of a lifetime.</p>
+          <a href="404.html" class="btn btn-navy">Continue Reading</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+
+  <!-- SECTION 4 : LATEST POSTS GRID -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">Latest Articles</span>
+        <h2>Fresh Off The <span>Rails</span></h2>
+      </div>
+      <div class="blog-grid" id="blogGrid">
+        <article class="blog-card reveal">
+          <div class="thumb">
+            <img src="images/train-window.webp" alt="Scenic view from train window" loading="lazy">
+            <span class="cat">Destinations</span>
+          </div>
+          <div class="body">
+            <div class="blog-meta"><span><i class="fa-regular fa-calendar"></i> July 28, 2026</span><span><i class="fa-regular fa-comment"></i> 24</span></div>
+            <h3><a href="404.html">10 Stunning Scenic Routes You Must Experience by Train</a></h3>
+            <p>From coastal cliffs to Himalayan passes, these rail journeys redefine beautiful travel.</p>
+            <a href="404.html" class="read-more">Read Article</a>
+          </div>
+        </article>
+        <article class="blog-card reveal">
+          <div class="thumb">
+            <img src="images/train-ticket.webp" alt="Booking a train ticket" loading="lazy">
+            <span class="cat">Booking Guide</span>
+          </div>
+          <div class="body">
+            <div class="blog-meta"><span><i class="fa-regular fa-calendar"></i> July 20, 2026</span><span><i class="fa-regular fa-comment"></i> 18</span></div>
+            <h3><a href="404.html">How to Get Confirmed Tickets Even in Peak Season</a></h3>
+            <p>Smart strategies — from Tatkal timing to alternate trains — that beat the last-minute rush.</p>
+            <a href="404.html" class="read-more">Read Article</a>
+          </div>
+        </article>
+        <article class="blog-card reveal">
+          <div class="thumb">
+            <img src="images/catering.webp" alt="Onboard catering food" loading="lazy">
+            <span class="cat">Onboard Life</span>
+          </div>
+          <div class="body">
+            <div class="blog-meta"><span><i class="fa-regular fa-calendar"></i> July 12, 2026</span><span><i class="fa-regular fa-comment"></i> 31</span></div>
+            <h3><a href="404.html">A Foodie's Guide to Ordering Delicious Meals Onboard</a></h3>
+            <p>From regional thalis to fresh pizza, here's how to eat like royalty while the train rolls on.</p>
+            <a href="404.html" class="read-more">Read Article</a>
+          </div>
+        </article>
+        <article class="blog-card reveal">
+          <div class="thumb">
+            <img src="images/engine-front.webp" alt="Modern train engine" loading="lazy">
+            <span class="cat">News</span>
+          </div>
+          <div class="body">
+            <div class="blog-meta"><span><i class="fa-regular fa-calendar"></i> July 05, 2026</span><span><i class="fa-regular fa-comment"></i> 12</span></div>
+            <h3><a href="404.html">India's Greenest Fleet: 100 New Electric Locomotives Unveiled</a></h3>
+            <p>A bold step toward net-zero rail travel — cleaner engines, quieter journeys, lower fares.</p>
+            <a href="404.html" class="read-more">Read Article</a>
+          </div>
+        </article>
+        <article class="blog-card reveal">
+          <div class="thumb">
+            <img src="images/sleeper-coach.webp" alt="Comfortable sleeper coach" loading="lazy">
+            <span class="cat">Travel Tips</span>
+          </div>
+          <div class="body">
+            <div class="blog-meta"><span><i class="fa-regular fa-calendar"></i> June 28, 2026</span><span><i class="fa-regular fa-comment"></i> 27</span></div>
+            <h3><a href="404.html">Sleep Better in Sleeper Class: 8 Pro Tips From Seasoned Travellers</a></h3>
+            <p>Pillow hacks, noise management, and packing lists for the most restful overnight journeys.</p>
+            <a href="404.html" class="read-more">Read Article</a>
+          </div>
+        </article>
+        <article class="blog-card reveal">
+          <div class="thumb">
+            <img src="images/night-train.webp" alt="Night express train" loading="lazy">
+            <span class="cat">Destinations</span>
+          </div>
+          <div class="body">
+            <div class="blog-meta"><span><i class="fa-regular fa-calendar"></i> June 18, 2026</span><span><i class="fa-regular fa-comment"></i> 15</span></div>
+            <h3><a href="404.html">5 Romantic Night Trains That Turn a Journey Into a Honeymoon</a></h3>
+            <p>Dreamy sleeper routes, candlelight dining coaches, and stars above — travel romance redefined.</p>
+            <a href="404.html" class="read-more">Read Article</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5 : RECENT POSTS + SIDEBAR -->
+  <section class="section">
+    <div class="container">
+      <div class="blog-layout">
+        <div class="sidebar reveal">
+          <h3><i class="fa-solid fa-clock-rotate-left"></i> Recent Posts</h3>
+          <ul class="recent-posts">
+            <li>
+              <img src="images/mountain-train.webp" alt="Toy train journey">
+              <div><a href="404.html">The Magic of India's Iconic Toy Trains</a><small>August 02, 2026</small></div>
+            </li>
+            <li>
+              <img src="images/railway-track.webp" alt="Railway tracks">
+              <div><a href="404.html">Track Safety: How We Keep 12,500 Trains On Time</a><small>July 30, 2026</small></div>
+            </li>
+            <li>
+              <img src="images/train-interior.webp" alt="Train coach interior">
+              <div><a href="404.html">AC vs Sleeper: Which Class Fits Your Budget?</a><small>July 25, 2026</small></div>
+            </li>
+            <li>
+              <img src="images/passengers-platform.webp" alt="Platform scenes">
+              <div><a href="404.html">Hidden Gems: Best Station Food Across the Country</a><small>July 15, 2026</small></div>
+            </li>
+          </ul>
+        </div>
+        <div class="sidebar reveal">
+          <h3><i class="fa-solid fa-list"></i> Top Categories</h3>
+          <ul>
+            <li>Travel Tips <span>34</span></li>
+            <li>Booking Guide <span>21</span></li>
+            <li>Onboard Life <span>18</span></li>
+            <li>Destinations <span>27</span></li>
+            <li>News &amp; Updates <span>16</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6 : POPULAR TAGS -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">Popular Right Now</span>
+        <h2>Trending <span>Tags</span></h2>
+      </div>
+      <div class="tag-cloud reveal">
+        <a href="404.html">#Shatabdi</a>
+        <a href="404.html">#ToyTrain</a>
+        <a href="404.html">#RailFood</a>
+        <a href="404.html">#Vistadome</a>
+        <a href="404.html">#NightJourney</a>
+        <a href="404.html">#PeakSeason</a>
+        <a href="404.html">#ScenicRoute</a>
+        <a href="404.html">#Freight</a>
+        <a href="404.html">#GreenRail</a>
+        <a href="404.html">#TravelTips</a>
+        <a href="404.html">#StationEats</a>
+        <a href="404.html">#E-Ticket</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7 : NEWSLETTER -->
+  <section class="section">
+    <div class="container">
+      <div class="newsletter reveal">
+        <div class="nl-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+        <h2>Never Miss A Story</h2>
+        <p>Join 500,000+ readers who get our best travel guides and exclusive offers weekly.</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" placeholder="Enter your email address" required>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8 : CTA -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="cta-band reveal">
+        <div>
+          <h2>Liked What You Read?</h2>
+          <p>Turn those blog dreams into real journeys. Book your next train adventure right now.</p>
+        </div>
+        <a href="404.html" class="btn btn-primary"><i class="fa-solid fa-ticket"></i> Book Tickets</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="index.html" class="brand">
+            <img src="images/logo.webp" alt="Railway Services" class="brand-img">
+          </a>
+          <p>Delivering safe, punctual, and comfortable rail travel to over 12 million passengers every year since 1998.</p>
+          <div class="socials">
+            <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right"></i> Services</a></li>
+            <li><a href="blog.html"><i class="fa-solid fa-chevron-right"></i> Blog</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Our Services</h4>
+          <ul class="footer-links">
+            <li><a href="404.html"><i class="fa-solid fa-chevron-right"></i> Ticket Booking</a></li>
+            <li><a href="404.html"><i class="fa-solid fa-chevron-right"></i> Freight &amp; Cargo</a></li>
+            <li><a href="404.html"><i class="fa-solid fa-chevron-right"></i> Live Tracking</a></li>
+            <li><a href="404.html"><i class="fa-solid fa-chevron-right"></i> Onboard Catering</a></li>
+            <li><a href="404.html"><i class="fa-solid fa-chevron-right"></i> Heritage Tours</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact Info</h4>
+          <ul class="footer-contact">
+            <li><i class="fa-solid fa-location-dot"></i> MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, Salem, Tamil Nadu 636008</li>
+            <li><i class="fa-brands fa-whatsapp"></i> WhatsApp: +91 70107 92745</li>
+            <li><i class="fa-solid fa-envelope"></i> info@thestackly.com</li>
+            <li><i class="fa-solid fa-envelope"></i> thestackly@gmail.com</li>
+            <li><i class="fa-regular fa-clock"></i> Mon - Sun : 24x7 Open</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        © 2026 <a href="index.html">Railway Services</a>. All rights reserved. | Made with <i class="fa-solid fa-heart" style="color:var(--accent)"></i> for travellers.
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

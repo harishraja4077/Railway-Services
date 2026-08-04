@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Railway Services - 24x7 helpline, email, head office locations, support hours, and a quick contact form.">
+  <title>Contact Us | Railway Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-train"><i class="fa-solid fa-train-subway"></i></div>
+    <div class="preloader-track"><span></span></div>
+    <p>All Aboard...</p>
+  </div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="container">
+      <span><i class="fa-brands fa-whatsapp"></i> WhatsApp: +91 70107 92745</span>
+      <span class="right">
+        <a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="404.html"><i class="fa-brands fa-twitter"></i></a>
+        <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+        <a href="404.html"><i class="fa-brands fa-youtube"></i></a>
+      </span>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <img src="images/logo.webp" alt="Railway Services" class="brand-img">
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html" class="active">Contact</a>
+        <div class="nav-auth">
+          <a href="signin.html" class="nav-btn nav-ghost"><i class="fa-solid fa-right-to-bracket"></i> Sign In</a>
+          <a href="signup.html" class="nav-btn nav-solid"><i class="fa-solid fa-user-plus"></i> Sign Up</a>
+        </div>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- SECTION 1 : PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Contact <span>Railway Services</span></h1>
+      <nav class="breadcrumb">
+        <a href="index.html">Home</a> <i class="fa-solid fa-angle-right"></i> <span>Contact</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- SECTION 2 : CONTACT INFO CARDS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">Reach Us</span>
+        <h2>We'd Love To <span>Hear From You</span></h2>
+        <p>Questions, feedback, or freight quotes — our team responds within minutes.</p>
+      </div>
+      <div class="contact-cards">
+        <div class="contact-card reveal">
+          <i class="fa-solid fa-phone-volume"></i>
+          <h3>Call Us</h3>
+          <p><a href="https://wa.me/917010792745">WhatsApp: +91 70107 92745</a></p>
+        </div>
+        <div class="contact-card reveal">
+          <i class="fa-solid fa-envelope"></i>
+          <h3>Email Us</h3>
+          <p><a href="mailto:info@thestackly.com">info@thestackly.com</a><br><a href="mailto:thestackly@gmail.com">thestackly@gmail.com</a></p>
+        </div>
+        <div class="contact-card reveal">
+          <i class="fa-solid fa-location-dot"></i>
+          <h3>Visit Us</h3>
+          <p>MMR Complex, Chinna Thirupathi,<br>near Chinna Muniyappan Kovil,<br>Salem, Tamil Nadu 636008</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3 : CONTACT FORM + MAP -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">Send A Message</span>
+        <h2>We Reply Within <span>24 Hours</span></h2>
+      </div>
+      <div class="contact-grid">
+        <form class="contact-form reveal" id="contactForm">
+          <h3><i class="fa-solid fa-paper-plane" style="color:var(--accent)"></i> Drop Us A Line</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cname">Full Name</label>
+              <input type="text" id="cname" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label for="cemail">Email Address</label>
+              <input type="email" id="cemail" placeholder="you@email.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="csubject">Subject</label>
+            <select id="csubject">
+              <option>General Enquiry</option>
+              <option>Ticket Booking Help</option>
+              <option>Cancellation / Refund</option>
+              <option>Freight &amp; Cargo</option>
+              <option>Feedback / Complaint</option>
+              <option>Partnership</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="cmessage">Your Message</label>
+            <textarea id="cmessage" placeholder="Write your message here..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+          <p id="formStatus" class="form-status" style="margin-top:12px;font-size:0.9rem;"></p>
+        </form>
+        <div class="map-wrap reveal">
+          <iframe title="Railway Services Head Office Map"
+            src="https://www.google.com/maps?q=MMR%20Complex%20Chinna%20Thirupathi%20Salem%20Tamil%20Nadu&output=embed" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4 : SUPPORT HOURS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">Availability</span>
+        <h2>Support <span>Hours</span></h2>
+      </div>
+      <div class="value-grid">
+        <div class="value-card reveal">
+          <i class="fa-regular fa-clock"></i>
+          <div>
+            <h3>Helpline &amp; Chat</h3>
+            <p>Available 24 hours a day, 7 days a week — even on public holidays.</p>
+          </div>
+        </div>
+        <div class="value-card reveal">
+          <i class="fa-solid fa-phone"></i>
+          <div>
+            <h3>Freight Desk</h3>
+            <p>Mon – Sat, 9:00 AM to 8:00 PM for consignment bookings and quotes.</p>
+          </div>
+        </div>
+        <div class="value-card reveal">
+          <i class="fa-solid fa-building-shield"></i>
+          <div>
+            <h3>Head Office</h3>
+            <p>Mon – Fri, 10:00 AM to 6:00 PM. Walk-ins welcome at MMR Complex, Salem.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5 : OFFICE LOCATIONS -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">Where To Find Us</span>
+        <h2>Our Regional <span>Offices</span></h2>
+      </div>
+      <div class="contact-cards">
+        <div class="contact-card reveal">
+          <i class="fa-solid fa-building-columns"></i>
+          <h3>Salem (HQ)</h3>
+          <p>MMR Complex, Chinna Thirupathi,<br>near Chinna Muniyappan Kovil,<br>Salem, Tamil Nadu 636008</p>
+        </div>
+        <div class="contact-card reveal">
+          <i class="fa-brands fa-whatsapp"></i>
+          <h3>WhatsApp</h3>
+          <p><a href="https://wa.me/917010792745">+91 70107 92745</a></p>
+        </div>
+        <div class="contact-card reveal">
+          <i class="fa-solid fa-envelope"></i>
+          <h3>Email</h3>
+          <p><a href="mailto:info@thestackly.com">info@thestackly.com</a><br><a href="mailto:thestackly@gmail.com">thestackly@gmail.com</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6 : FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">Quick Answers</span>
+        <h2>Frequently Asked <span>Questions</span></h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <button class="faq-question">How quickly do you respond to emails? <i class="fa-solid fa-chevron-down"></i></button>
+          <div class="faq-answer"><p>Most messages are answered within 2 hours during business time and within 24 hours at maximum. Urgent issues should be raised on the helpline.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question">Can I get support in regional languages? <i class="fa-solid fa-chevron-down"></i></button>
+          <div class="faq-answer"><p>Yes. Our helpline supports Hindi, English, Tamil, Telugu, Bengali, and Marathi. Choose your preferred language on the IVR menu.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question">How do I raise a complaint about onboard services? <i class="fa-solid fa-chevron-down"></i></button>
+          <div class="faq-answer"><p>Fill the contact form selecting "Feedback / Complaint" and attach your PNR or train number. Our quality team follows up within 48 hours.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question">Do you provide doorstep pickup for freight? <i class="fa-solid fa-chevron-down"></i></button>
+          <div class="faq-answer"><p>Yes, our end-to-end freight service includes pickup and delivery in 120+ cities. Request a quote via the form and choose "Freight &amp; Cargo".</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7 : NEWSLETTER -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="newsletter reveal">
+        <div class="nl-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+        <h2>Stay In The Loop</h2>
+        <p>Get fare drops, new routes, and travel guides straight to your inbox.</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" placeholder="Enter your email address" required>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8 : CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-band reveal">
+        <div>
+          <h2>Prefer To Just Book A Ticket?</h2>
+          <p>Skip the chat — go straight to searching trains and securing your seat.</p>
+        </div>
+        <a href="404.html" class="btn btn-primary"><i class="fa-solid fa-ticket"></i> Book Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="index.html" class="brand">
+            <img src="images/logo.webp" alt="Railway Services" class="brand-img">
+          </a>
+          <p>Delivering safe, punctual, and comfortable rail travel to over 12 million passengers every year since 1998.</p>
+          <div class="socials">
+            <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right"></i> Services</a></li>
+            <li><a href="blog.html"><i class="fa-solid fa-chevron-right"></i> Blog</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Our Services</h4>
+          <ul class="footer-links">
+            <li><a href="404.html"><i class="fa-solid fa-chevron-right"></i> Ticket Booking</a></li>
+            <li><a href="404.html"><i class="fa-solid fa-chevron-right"></i> Freight &amp; Cargo</a></li>
+            <li><a href="404.html"><i class="fa-solid fa-chevron-right"></i> Live Tracking</a></li>
+            <li><a href="404.html"><i class="fa-solid fa-chevron-right"></i> Onboard Catering</a></li>
+            <li><a href="404.html"><i class="fa-solid fa-chevron-right"></i> Heritage Tours</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact Info</h4>
+          <ul class="footer-contact">
+            <li><i class="fa-solid fa-location-dot"></i> MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, Salem, Tamil Nadu 636008</li>
+            <li><i class="fa-brands fa-whatsapp"></i> WhatsApp: +91 70107 92745</li>
+            <li><i class="fa-solid fa-envelope"></i> info@thestackly.com</li>
+            <li><i class="fa-solid fa-envelope"></i> thestackly@gmail.com</li>
+            <li><i class="fa-regular fa-clock"></i> Mon - Sun : 24x7 Open</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        © 2026 <a href="index.html">Railway Services</a>. All rights reserved. | Made with <i class="fa-solid fa-heart" style="color:var(--accent)"></i> for travellers.
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

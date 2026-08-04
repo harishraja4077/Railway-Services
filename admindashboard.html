@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Railway Services admin dashboard - manage trains, bookings, users and view analytics.">
+  <title>Admin Dashboard | Railway Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="dash-body">
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-train"><i class="fa-solid fa-train-subway"></i></div>
+    <div class="preloader-track"><span></span></div>
+    <p>All Aboard...</p>
+  </div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <div class="dash-shell">
+
+    <!-- SIDEBAR -->
+    <aside class="dash-sidebar" id="dashSidebar">
+      <a href="index.html" class="dash-brand">
+        <img src="images/logo.webp" alt="Railway Services" class="brand-img">
+      </a>
+
+      <nav class="dash-nav">
+        <span class="dash-nav-label">Manage</span>
+        <a class="dash-link active" data-view="overview"><i class="fa-solid fa-gauge-high"></i> Overview</a>
+        <a class="dash-link" data-view="trains"><i class="fa-solid fa-train"></i> Manage Trains</a>
+        <a class="dash-link" data-view="bookings"><i class="fa-solid fa-ticket"></i> Manage Bookings</a>
+        <a class="dash-link" data-view="users"><i class="fa-solid fa-users"></i> Manage Users</a>
+        <a class="dash-link" data-view="analytics"><i class="fa-solid fa-chart-line"></i> Analytics</a>
+        <span class="dash-nav-label">General</span>
+        <a class="dash-link" href="index.html"><i class="fa-solid fa-house"></i> Back to Site</a>
+      </nav>
+
+      <div class="dash-sidebar-foot">
+        <div class="dash-mini-user">
+          <img src="images/station-clock.webp" alt="Admin">
+          <div>
+            <strong>Control Room</strong>
+            <span>Super Admin</span>
+          </div>
+        </div>
+        <button class="dash-logout" id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+      </div>
+    </aside>
+
+    <div class="dash-overlay" id="dashOverlay"></div>
+
+    <!-- MAIN COLUMN -->
+    <main class="dash-main">
+
+      <header class="dash-topbar">
+        <div class="dash-topbar-title">
+          <button class="dash-menu" id="dashMenu" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+          </button>
+          <div>
+            <h2 id="topbarTitle">Overview</h2>
+            <p id="topbarSub">Network operations summary</p>
+          </div>
+        </div>
+
+        <div class="dash-actions">
+          <div class="dash-notif">
+            <button class="dash-icon-btn" id="notifToggle" aria-label="Notifications">
+              <i class="fa-regular fa-bell"></i>
+              <span class="dash-dot"></span>
+            </button>
+            <div class="notif-panel" id="notifPanel">
+              <div class="notif-item">
+                <div class="notif-ico"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                <div>
+                  <strong>Signal Fault Resolved</strong>
+                  <p>Train 12723 blocked for 45 min at Jhansi — now moving.</p>
+                  <time>6 min ago</time>
+                </div>
+              </div>
+              <div class="notif-item">
+                <div class="notif-ico"><i class="fa-solid fa-train"></i></div>
+                <div>
+                  <strong>New Train Scheduled</strong>
+                  <p>Vande Bharat 8th pair approved for the Delhi–Varanasi route.</p>
+                  <time>1 hr ago</time>
+                </div>
+              </div>
+              <div class="notif-item">
+                <div class="notif-ico"><i class="fa-solid fa-user-plus"></i></div>
+                <div>
+                  <strong>Sign-up Spike</strong>
+                  <p>1,204 new passengers registered in the last 24 hours.</p>
+                  <time>3 hrs ago</time>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="index.html">
+            <img src="images/station-clock.webp" alt="Admin avatar" class="dash-avatar">
+          </a>
+        </div>
+      </header>
+
+      <div class="dash-content">
+
+        <!-- ============ OVERVIEW ============ -->
+        <section class="view active" id="view-overview">
+          <div class="dash-greet reveal">
+            <div>
+              <h1>Control Room, <span>Good Morning</span> ☀️</h1>
+              <p>Network running smoothly — 96.4% trains on time today.</p>
+            </div>
+            <button class="btn btn-primary" id="quickAddTrain"><i class="fa-solid fa-plus"></i> Add Train</button>
+          </div>
+
+          <div class="stat-grid">
+            <div class="stat-card reveal">
+              <div class="stat-ico ico-blue"><i class="fa-solid fa-train"></i></div>
+              <div>
+                <h3><span data-count="12500">0</span></h3>
+                <p>Active Trains</p>
+                <small class="up"><i class="fa-solid fa-arrow-trend-up"></i> +18 this week</small>
+              </div>
+            </div>
+            <div class="stat-card reveal">
+              <div class="stat-ico ico-green"><i class="fa-solid fa-ticket"></i></div>
+              <div>
+                <h3><span data-count="48240">0</span></h3>
+                <p>Active Bookings</p>
+                <small class="up"><i class="fa-solid fa-arrow-trend-up"></i> +6.2% vs last week</small>
+              </div>
+            </div>
+            <div class="stat-card reveal">
+              <div class="stat-ico ico-orange"><i class="fa-solid fa-users"></i></div>
+              <div>
+                <h3><span data-count="1204000">0</span></h3>
+                <p>Registered Users</p>
+                <small class="up"><i class="fa-solid fa-arrow-trend-up"></i> 12.4 Lakh</small>
+              </div>
+            </div>
+            <div class="stat-card reveal">
+              <div class="stat-ico ico-red"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+              <div>
+                <h3>₹<span data-count="98.6">0</span> Cr</h3>
+                <p>Monthly Revenue</p>
+                <small class="up"><i class="fa-solid fa-arrow-trend-up"></i> +8.1% MoM</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="quick-grid">
+            <button class="quick-card reveal" data-goto="trains" style="border:none;font-family:inherit;cursor:pointer"><i class="fa-solid fa-train"></i><h4>Trains</h4><p>12,500 in service</p></button>
+            <button class="quick-card reveal" data-goto="bookings" style="border:none;font-family:inherit;cursor:pointer"><i class="fa-solid fa-ticket"></i><h4>Bookings</h4><p>48,240 active</p></button>
+            <button class="quick-card reveal" data-goto="users" style="border:none;font-family:inherit;cursor:pointer"><i class="fa-solid fa-users"></i><h4>Users</h4><p>1.20M registered</p></button>
+            <button class="quick-card reveal" data-goto="analytics" style="border:none;font-family:inherit;cursor:pointer"><i class="fa-solid fa-chart-line"></i><h4>Analytics</h4><p>Live dashboards</p></button>
+          </div>
+
+          <div class="dash-grid">
+            <div class="panel reveal">
+              <div class="panel-head">
+                <h3><i class="fa-solid fa-train-subway"></i> Live Train Status</h3>
+                <a href="404.html" data-goto="trains">Manage trains</a>
+              </div>
+              <div class="table-scroll">
+                <table class="dash-table">
+                  <thead>
+                    <tr><th>Train No</th><th>Train</th><th>Route</th><th>Status</th><th>Speed</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="pnr">12951</td>
+                      <td class="train-name">Mumbai Rajdhani</td>
+                      <td><span class="route-cell">NDLS <span class="route-line"></span> BCT</span></td>
+                      <td><span class="status-badge status-on-time">On Time</span></td>
+                      <td>118 km/h</td>
+                    </tr>
+                    <tr>
+                      <td class="pnr">22455</td>
+                      <td class="train-name">Vande Bharat Exp</td>
+                      <td><span class="route-cell">NDLS <span class="route-line"></span> KGP</span></td>
+                      <td><span class="status-badge status-on-time">On Time</span></td>
+                      <td>112 km/h</td>
+                    </tr>
+                    <tr>
+                      <td class="pnr">12723</td>
+                      <td class="train-name">Telangana Exp</td>
+                      <td><span class="route-cell">NDLS <span class="route-line"></span> SC</span></td>
+                      <td><span class="status-badge status-delayed">Delayed 35m</span></td>
+                      <td>64 km/h</td>
+                    </tr>
+                    <tr>
+                      <td class="pnr">12621</td>
+                      <td class="train-name">Tamil Nadu Exp</td>
+                      <td><span class="route-cell">NDLS <span class="route-line"></span> MAS</span></td>
+                      <td><span class="status-badge status-cancelled">Cancelled</span></td>
+                      <td>—</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="panel reveal">
+              <div class="panel-head">
+                <h3><i class="fa-solid fa-chart-simple"></i> Revenue (Jul 2026)</h3>
+                <a href="404.html" data-goto="analytics">Full report</a>
+              </div>
+              <div class="panel-body">
+                <div class="chart-bars" id="revenueChart">
+                  <div class="chart-col"><span class="bar-val">₹61 Cr</span><div class="bar" data-h="70"></div><span>W1</span></div>
+                  <div class="chart-col"><span class="bar-val">₹58 Cr</span><div class="bar" data-h="66"></div><span>W2</span></div>
+                  <div class="chart-col"><span class="bar-val">₹74 Cr</span><div class="bar" data-h="84"></div><span>W3</span></div>
+                  <div class="chart-col"><span class="bar-val">₹82 Cr</span><div class="bar" data-h="92"></div><span>W4</span></div>
+                  <div class="chart-col"><span class="bar-val">₹67 Cr</span><div class="bar" data-h="76"></div><span>W5</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel reveal">
+            <div class="panel-head">
+              <h3><i class="fa-solid fa-list-check"></i> Recent Bookings</h3>
+              <a href="404.html" data-goto="bookings">View all</a>
+            </div>
+            <div class="table-scroll">
+              <table class="dash-table">
+                <thead>
+                  <tr><th>PNR</th><th>Passenger</th><th>Train</th><th>Route</th><th>Class</th><th>Fare</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="pnr">4481-2765-1932</td>
+                    <td>Priya Sharma</td>
+                    <td class="train-name">Mumbai Rajdhani</td>
+                    <td><span class="route-cell">NDLS <span class="route-line"></span> BCT</span></td>
+                    <td>1st AC</td>
+                    <td>₹3,455</td>
+                    <td><span class="dash-badge badge-blue">Confirmed</span></td>
+                  </tr>
+                  <tr>
+                    <td class="pnr">4473-1187-9902</td>
+                    <td>Rahul Mehta</td>
+                    <td class="train-name">Vande Bharat</td>
+                    <td><span class="route-cell">NDLS <span class="route-line"></span> KGP</span></td>
+                    <td>CC</td>
+                    <td>₹1,890</td>
+                    <td><span class="dash-badge badge-green">Confirmed</span></td>
+                  </tr>
+                  <tr>
+                    <td class="pnr">4470-2210-8846</td>
+                    <td>Ananya Iyer</td>
+                    <td class="train-name">Duronto Express</td>
+                    <td><span class="route-cell">NDLS <span class="route-line"></span> PNBE</span></td>
+                    <td>3rd AC</td>
+                    <td>₹2,610</td>
+                    <td><span class="dash-badge badge-orange">WL 12</span></td>
+                  </tr>
+                  <tr>
+                    <td class="pnr">4472-0088-3154</td>
+                    <td>Vikram Singh</td>
+                    <td class="train-name">Shatabdi Express</td>
+                    <td><span class="route-cell">NDLS <span class="route-line"></span> CDG</span></td>
+                    <td>CC</td>
+                    <td>₹1,045</td>
+                    <td><span class="dash-badge badge-grey">Completed</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ MANAGE TRAINS ============ -->
+        <section class="view" id="view-trains">
+          <div class="dash-greet reveal">
+            <div>
+              <h1>Manage <span>Trains</span></h1>
+              <p>Add, edit or schedule services across the network.</p>
+            </div>
+            <button class="btn btn-primary" id="addTrainBtn"><i class="fa-solid fa-plus"></i> Add Train</button>
+          </div>
+
+          <div class="panel reveal">
+            <div class="panel-head">
+              <div class="dash-filters">
+                <button class="filter-chip active" data-filter="all">All</button>
+                <button class="filter-chip" data-filter="rajdhani">Rajdhani</button>
+                <button class="filter-chip" data-filter="vande">Vande Bharat</button>
+                <button class="filter-chip" data-filter="express">Express</button>
+              </div>
+              <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="trainSearch" placeholder="Search train no. or name...">
+              </div>
+            </div>
+            <div class="table-scroll">
+              <table class="dash-table" id="trainsTable">
+                <thead>
+                  <tr>
+                    <th>Train No</th><th>Train Name</th><th>Route</th><th>Days</th><th>Classes</th><th>Departure</th><th>Status</th><th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr data-status="rajdhani">
+                    <td class="pnr">12951</td>
+                    <td class="train-name">Mumbai Rajdhani</td>
+                    <td><span class="route-cell">NDLS <span class="route-line"></span> BCT</span></td>
+                    <td>Daily</td>
+                    <td>1A, 2A, 3A</td>
+                    <td>16:55</td>
+                    <td><span class="dash-badge badge-green">Active</span></td>
+                    <td><button class="btn btn-outline edit-train" style="padding:5px 12px;font-size:0.76rem">Edit</button> <button class="btn btn-outline del-train" style="padding:5px 12px;font-size:0.76rem;color:#dc2626">Delete</button></td>
+                  </tr>
+                  <tr data-status="rajdhani">
+                    <td class="pnr">12301</td>
+                    <td class="train-name">Howrah Rajdhani</td>
+                    <td><span class="route-cell">NDLS <span class="route-line"></span> HWH</span></td>
+                    <td>Daily</td>
+                    <td>1A, 2A, 3A</td>
+                    <td>16:50</td>
+                    <td><span class="dash-badge badge-green">Active</span></td>
+                    <td><button class="btn btn-outline edit-train" style="padding:5px 12px;font-size:0.76rem">Edit</button> <button class="btn btn-outline del-train" style="padding:5px 12px;font-size:0.76rem;color:#dc2626">Delete</button></td>
+                  </tr>
+                  <tr data-status="vande">
+                    <td class="pnr">22455</td>
+                    <td class="train-name">Vande Bharat Exp</td>
+                    <td><span class="route-cell">NDLS <span class="route-line"></span> KGP</span></td>
+                    <td>Mon, Thu, Sat</td>
+                    <td>CC, EC</td>
+                    <td>17:40</td>
+                    <td><span class="dash-badge badge-green">Active</span></td>
+                    <td><button class="btn btn-outline edit-train" style="padding:5px 12px;font-size:0.76rem">Edit</button> <button class="btn btn-outline del-train" style="padding:5px 12px;font-size:0.76rem;color:#dc2626">Delete</button></td>
+                  </tr>
+                  <tr data-status="express">
+                    <td class="pnr">12723</td>
+                    <td class="train-name">Telangana Exp</td>
+                    <td><span class="route-cell">NDLS <span class="route-line"></span> SC</span></td>
+                    <td>Daily</td>
+                    <td>2A, 3A, SL</td>
+                    <td>05:35</td>
+                    <td><span class="dash-badge badge-orange">Delayed</span></td>
+                    <td><button class="btn btn-outline edit-train" style="padding:5px 12px;font-size:0.76rem">Edit</button> <button class="btn btn-outline del-train" style="padding:5px 12px;font-size:0.76rem;color:#dc2626">Delete</button></td>
+                  </tr>
+                  <tr data-status="express">
+                    <td class="pnr">12621</td>
+                    <td class="train-name">Tamil Nadu Exp</td>
+                    <td><span class="route-cell">NDLS <span class="route-line"></span> MAS</span></td>
+                    <td>Daily</td>
+                    <td>2A, 3A, SL</td>
+                    <td>22:30</td>
+                    <td><span class="dash-badge badge-red">Cancelled</span></td>
+                    <td><button class="btn btn-outline edit-train" style="padding:5px 12px;font-size:0.76rem">Edit</button> <button class="btn btn-outline del-train" style="padding:5px 12px;font-size:0.76rem;color:#dc2626">Delete</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ MANAGE BOOKINGS ============ -->
+        <section class="view" id="view-bookings">
+          <div class="dash-greet reveal">
+            <div>
+              <h1>Manage <span>Bookings</span></h1>
+              <p>Monitor PNRs, fare collections and cancellations.</p>
+            </div>
+          </div>
+
+          <div class="panel reveal">
+            <div class="panel-head">
+              <div class="dash-filters">
+                <button class="filter-chip active" data-filter="all">All</button>
+                <button class="filter-chip" data-filter="confirmed">Confirmed</button>
+                <button class="filter-chip" data-filter="waitlisted">Waitlisted</button>
+                <button class="filter-chip" data-filter="cancelled">Cancelled</button>
+              </div>
+              <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="adminBookingSearch" placeholder="Search PNR or passenger...">
+              </div>
+            </div>
+            <div class="table-scroll">
+              <table class="dash-table" id="adminBookingsTable">
+                <thead>
+                  <tr><th>PNR</th><th>Passenger</th><th>Train</th><th>Route</th><th>Class</th><th>Fare</th><th>Status</th><th>Actions</th></tr>
+                </thead>
+                <tbody>
+                  <tr data-status="confirmed">
+                    <td class="pnr">4481-2765-1932</td>
+                    <td>Priya Sharma</td>
+                    <td class="train-name">Mumbai Rajdhani</td>
+                    <td><span class="route-cell">NDLS <span class="route-line"></span> BCT</span></td>
+                    <td>1st AC</td>
+                    <td>₹3,455</td>
+                    <td><span class="dash-badge badge-blue">Confirmed</span></td>
+                    <td><button class="btn btn-outline view-booking" style="padding:5px 12px;font-size:0.76rem">View</button></td>
+                  </tr>
+                  <tr data-status="confirmed">
+                    <td class="pnr">4473-1187-9902</td>
+                    <td>Rahul Mehta</td>
+                    <td class="train-name">Vande Bharat</td>
+                    <td><span class="route-cell">NDLS <span class="route-line"></span> KGP</span></td>
+                    <td>CC</td>
+                    <td>₹1,890</td>
+                    <td><span class="dash-badge badge-green">Confirmed</span></td>
+                    <td><button class="btn btn-outline view-booking" style="padding:5px 12px;font-size:0.76rem">View</button></td>
+                  </tr>
+                  <tr data-status="waitlisted">
+                    <td class="pnr">4470-2210-8846</td>
+                    <td>Ananya Iyer</td>
+                    <td class="train-name">Duronto Express</td>
+                    <td><span class="route-cell">NDLS <span class="route-line"></span> PNBE</span></td>
+                    <td>3rd AC</td>
+                    <td>₹2,610</td>
+                    <td><span class="dash-badge badge-orange">WL 12</span></td>
+                    <td><button class="btn btn-outline view-booking" style="padding:5px 12px;font-size:0.76rem">View</button></td>
+                  </tr>
+                  <tr data-status="cancelled">
+                    <td class="pnr">4389-7741-0063</td>
+                    <td>Rahul Mehta</td>
+                    <td class="train-name">Garib Rath</td>
+                    <td><span class="route-cell">NDLS <span class="route-line"></span> NGP</span></td>
+                    <td>3rd AC</td>
+                    <td>₹1,980</td>
+                    <td><span class="dash-badge badge-red">Cancelled</span></td>
+                    <td><button class="btn btn-outline view-booking" style="padding:5px 12px;font-size:0.76rem">View</button></td>
+                  </tr>
+                  <tr data-status="confirmed">
+                    <td class="pnr">4472-0088-3154</td>
+                    <td>Vikram Singh</td>
+                    <td class="train-name">Shatabdi Express</td>
+                    <td><span class="route-cell">NDLS <span class="route-line"></span> CDG</span></td>
+                    <td>CC</td>
+                    <td>₹1,045</td>
+                    <td><span class="dash-badge badge-grey">Completed</span></td>
+                    <td><button class="btn btn-outline view-booking" style="padding:5px 12px;font-size:0.76rem">View</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ MANAGE USERS ============ -->
+        <section class="view" id="view-users">
+          <div class="dash-greet reveal">
+            <div>
+              <h1>Manage <span>Users</span></h1>
+              <p>Review accounts, roles and travel activity.</p>
+            </div>
+          </div>
+
+          <div class="panel reveal">
+            <div class="panel-head">
+              <div class="dash-filters">
+                <button class="filter-chip active" data-filter="all">All</button>
+                <button class="filter-chip" data-filter="passenger">Passengers</button>
+                <button class="filter-chip" data-filter="staff">Staff</button>
+                <button class="filter-chip" data-filter="admin">Admins</button>
+              </div>
+              <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="userSearch" placeholder="Search name or email...">
+              </div>
+            </div>
+            <div class="table-scroll">
+              <table class="dash-table" id="usersTable">
+                <thead>
+                  <tr><th>User</th><th>Email</th><th>Role</th><th>Bookings</th><th>Joined</th><th>Status</th><th>Actions</th></tr>
+                </thead>
+                <tbody>
+                  <tr data-status="passenger">
+                    <td class="train-name">Priya Sharma</td>
+                    <td>priya.sharma@gmail.com</td>
+                    <td><span class="dash-badge badge-blue">Passenger</span></td>
+                    <td>14</td>
+                    <td>Mar 2021</td>
+                    <td><span class="dash-badge badge-green">Active</span></td>
+                    <td><button class="btn btn-outline block-user" style="padding:5px 12px;font-size:0.76rem;color:#dc2626">Block</button></td>
+                  </tr>
+                  <tr data-status="passenger">
+                    <td class="train-name">Rahul Mehta</td>
+                    <td>rahul.mehta@gmail.com</td>
+                    <td><span class="dash-badge badge-blue">Passenger</span></td>
+                    <td>9</td>
+                    <td>Nov 2022</td>
+                    <td><span class="dash-badge badge-green">Active</span></td>
+                    <td><button class="btn btn-outline block-user" style="padding:5px 12px;font-size:0.76rem;color:#dc2626">Block</button></td>
+                  </tr>
+                  <tr data-status="staff">
+                    <td class="train-name">Ananya Iyer</td>
+                    <td>ananya.iyer@rail.gov.in</td>
+                    <td><span class="dash-badge badge-orange">Staff</span></td>
+                    <td>—</td>
+                    <td>Jan 2020</td>
+                    <td><span class="dash-badge badge-green">Active</span></td>
+                    <td><button class="btn btn-outline block-user" style="padding:5px 12px;font-size:0.76rem;color:#dc2626">Block</button></td>
+                  </tr>
+                  <tr data-status="passenger">
+                    <td class="train-name">Vikram Singh</td>
+                    <td>vikram.singh@yahoo.com</td>
+                    <td><span class="dash-badge badge-blue">Passenger</span></td>
+                    <td>5</td>
+                    <td>Feb 2024</td>
+                    <td><span class="dash-badge badge-red">Suspended</span></td>
+                    <td><button class="btn btn-outline" style="padding:5px 12px;font-size:0.76rem;color:var(--success)">Restore</button></td>
+                  </tr>
+                  <tr data-status="admin">
+                    <td class="train-name">Control Room</td>
+                    <td>ops@railwayservices.in</td>
+                    <td><span class="dash-badge badge-red">Admin</span></td>
+                    <td>—</td>
+                    <td>System</td>
+                    <td><span class="dash-badge badge-green">Active</span></td>
+                    <td><button class="btn btn-outline" style="padding:5px 12px;font-size:0.76rem" disabled>—</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ ANALYTICS ============ -->
+        <section class="view" id="view-analytics">
+          <div class="dash-greet reveal">
+            <div>
+              <h1>Network <span>Analytics</span></h1>
+              <p>Live performance across the rail network.</p>
+            </div>
+          </div>
+
+          <div class="stat-grid">
+            <div class="stat-card reveal">
+              <div class="stat-ico ico-cyan"><i class="fa-solid fa-gauge"></i></div>
+              <div>
+                <h3>96.4%</h3>
+                <p>On-Time Performance</p>
+                <small class="up">Target: 95%</small>
+              </div>
+            </div>
+            <div class="stat-card reveal">
+              <div class="stat-ico ico-green"><i class="fa-solid fa-circle-check"></i></div>
+              <div>
+                <h3>82,150</h3>
+                <p>PNRs Booked Today</p>
+                <small class="up">Peak: 11:00–13:00</small>
+              </div>
+            </div>
+            <div class="stat-card reveal">
+              <div class="stat-ico ico-orange"><i class="fa-solid fa-bowl-food"></i></div>
+              <div>
+                <h3>1.9 Lakh</h3>
+                <p>Meals Delivered Onboard</p>
+                <small class="up">98.2% satisfaction</small>
+              </div>
+            </div>
+            <div class="stat-card reveal">
+              <div class="stat-ico ico-blue"><i class="fa-solid fa-person-walking-luggage"></i></div>
+              <div>
+                <h3>6.4 Mn</h3>
+                <p>Passengers This Month</p>
+                <small class="up">+9.3% YoY</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="dash-grid">
+            <div class="panel reveal">
+              <div class="panel-head"><h3><i class="fa-solid fa-chart-column"></i> Bookings by Class (this week)</h3></div>
+              <div class="panel-body">
+                <div class="chart-bars">
+                  <div class="chart-col"><span class="bar-val">3,120</span><div class="bar" data-h="38"></div><span>1st AC</span></div>
+                  <div class="chart-col"><span class="bar-val">18,440</span><div class="bar" data-h="80"></div><span>2nd AC</span></div>
+                  <div class="chart-col"><span class="bar-val">27,600</span><div class="bar" data-h="100"></div><span>3rd AC</span></div>
+                  <div class="chart-col"><span class="bar-val">22,900</span><div class="bar" data-h="88"></div><span>Sleeper</span></div>
+                  <div class="chart-col"><span class="bar-val">9,720</span><div class="bar" data-h="52"></div><span>CC</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel reveal">
+              <div class="panel-head"><h3><i class="fa-solid fa-star"></i> Top Routes</h3></div>
+              <div class="panel-body">
+                <div class="progress-wrap">
+                  <div class="progress-top"><span>Delhi → Mumbai</span><span>41,200</span></div>
+                  <div class="progress-track"><div class="progress-fill" data-progress="95"></div></div>
+                </div>
+                <div class="progress-wrap">
+                  <div class="progress-top"><span>Delhi → Kolkata</span><span>33,850</span></div>
+                  <div class="progress-track"><div class="progress-fill" data-progress="78"></div></div>
+                </div>
+                <div class="progress-wrap">
+                  <div class="progress-top"><span>Mumbai → Pune</span><span>29,400</span></div>
+                  <div class="progress-track"><div class="progress-fill" data-progress="68"></div></div>
+                </div>
+                <div class="progress-wrap" style="margin-bottom:0">
+                  <div class="progress-top"><span>Delhi → Varanasi</span><span>21,750</span></div>
+                  <div class="progress-track"><div class="progress-fill" data-progress="50"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+
+  <div class="dash-toasts" id="dashToasts"></div>
+
+  <script src="js/script.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Railway Services - Book train tickets, view live train schedules, and explore premium railway services across the country.">
+  <title>Home | Railway Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-train"><i class="fa-solid fa-train-subway"></i></div>
+    <div class="preloader-track"><span></span></div>
+    <p>All Aboard...</p>
+  </div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  
+  <!-- SECTION 1 : TOPBAR -->
+  <div class="topbar">
+    <div class="container">
+      <span><i class="fa-brands fa-whatsapp"></i> WhatsApp: +91 70107 92745</span>
+      <span class="right">
+        <a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="404.html"><i class="fa-brands fa-twitter"></i></a>
+        <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+        <a href="404.html"><i class="fa-brands fa-youtube"></i></a>
+      </span>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <img src="images/logo.webp" alt="Railway Services" class="brand-img">
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <div class="nav-auth">
+          <a href="signin.html" class="nav-btn nav-ghost"><i class="fa-solid fa-right-to-bracket"></i> Sign In</a>
+          <a href="signup.html" class="nav-btn nav-solid"><i class="fa-solid fa-user-plus"></i> Sign Up</a>
+        </div>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- SECTION 2 : HERO -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-badge"><i class="fa-solid fa-circle-check"></i> Trusted by 12+ Million Travellers</span>
+        <h1>Your Journey, <span>Our Track.</span><br>Travel <span class="typed-text" data-words="Smarter,Faster,Further,Greener">Smarter</span> With Us</h1>
+        <p>Book train tickets in seconds, track live trains, and enjoy world-class railway services — all from one trusted platform.</p>
+        <div class="hero-btns">
+          <a href="404.html" class="btn btn-primary"><i class="fa-solid fa-ticket"></i> Book Now</a>
+          <a href="404.html" class="btn btn-outline">Explore Services</a>
+        </div>
+        <div class="hero-stats">
+          <div><h3 data-count="12500">0</h3><span>Trains Daily</span></div>
+          <div><h3 data-count="7200">0</h3><span>Destinations</span></div>
+          <div><h3 data-count="98">0</h3><span>% On-Time</span></div>
+        </div>
+      </div>
+
+      <!-- Ticket search widget -->
+      <div class="ticket-widget glass" id="ticket">
+        <h3><i class="fa-solid fa-magnifying-glass-location"></i> Find Your Train</h3>
+        <form class="ticket-form" id="ticketForm">
+          <div class="form-group">
+            <label for="from">From</label>
+            <input type="text" id="from" placeholder="Origin station" value="Delhi" required>
+          </div>
+          <div class="form-group">
+            <label for="to">To</label>
+            <input type="text" id="to" placeholder="Destination station" value="Mumbai" required>
+          </div>
+          <div class="form-group">
+            <label for="date">Journey Date</label>
+            <input type="date" id="date" required>
+          </div>
+          <div class="form-group">
+            <label for="class">Class</label>
+            <select id="class">
+              <option>1st AC</option>
+              <option>2nd AC</option>
+              <option>3rd AC</option>
+              <option>Sleeper</option>
+              <option>General</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i> Search Trains</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE BAND -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span><i class="fa-solid fa-star"></i> Safe Travel <i class="fa-solid fa-star"></i> On-Time Guarantee <i class="fa-solid fa-star"></i> 7200+ Destinations <i class="fa-solid fa-star"></i> Live Tracking <i class="fa-solid fa-star"></i> 24x7 Support <i class="fa-solid fa-star"></i> Green Fleet <i class="fa-solid fa-star"></i> Award-Winning Service</span>
+      <span><i class="fa-solid fa-star"></i> Safe Travel <i class="fa-solid fa-star"></i> On-Time Guarantee <i class="fa-solid fa-star"></i> 7200+ Destinations <i class="fa-solid fa-star"></i> Live Tracking <i class="fa-solid fa-star"></i> 24x7 Support <i class="fa-solid fa-star"></i> Green Fleet <i class="fa-solid fa-star"></i> Award-Winning Service</span>
+    </div>
+  </div>
+
+  <!-- SECTION 3 : FEATURES -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">Why Choose Us</span>
+        <h2>Everything You Need For A <span>Perfect Journey</span></h2>
+        <p>From instant bookings to live tracking, we make railway travel effortless and enjoyable.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+          <h3>Instant Booking</h3>
+          <p>Secure your seat in under 60 seconds with our lightning-fast reservation system.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fa-solid fa-location-crosshairs"></i></div>
+          <h3>Live Train Tracking</h3>
+          <p>Follow your train in real time with GPS-enabled live status and running updates.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>Safe &amp; Secure</h3>
+          <p>256-bit encrypted payments and 100% refund guarantee on all cancellations.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
+          <h3>24x7 Support</h3>
+          <p>Round-the-clock customer care on call, chat, and email — whenever you need us.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4 : SERVICES PREVIEW -->
+  <section class="section section-alt" id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">Our Services</span>
+        <h2>Railway Services We <span>Offer</span></h2>
+        <p>Premium facilities designed to make every mile of your journey comfortable and memorable.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service-card reveal">
+          <div class="thumb">
+            <img src="images/metro-train.webp" alt="Passenger train service" loading="lazy">
+            <span class="price-tag">From ₹299</span>
+          </div>
+          <div class="body">
+            <h3>Passenger Travel</h3>
+            <p>Comfortable coaches across all classes with air-conditioned comfort and onboard dining.</p>
+            <a href="404.html" class="link">Learn More</a>
+          </div>
+        </article>
+        <article class="service-card reveal">
+          <div class="thumb">
+            <img src="images/freight-train.webp" alt="Freight transport service" loading="lazy">
+            <span class="price-tag">Custom Rates</span>
+          </div>
+          <div class="body">
+            <h3>Freight &amp; Cargo</h3>
+            <p>Bulk goods movement by rail with dedicated rakes, containers, and cold-chain logistics.</p>
+            <a href="404.html" class="link">Learn More</a>
+          </div>
+        </article>
+        <article class="service-card reveal">
+          <div class="thumb">
+            <img src="images/mountain-train.webp" alt="Scenic mountain railway" loading="lazy">
+            <span class="price-tag">Special Tours</span>
+          </div>
+          <div class="body">
+            <h3>Heritage &amp; Toy Trains</h3>
+            <p>Ride the iconic mountain railways through breathtaking valleys and hill stations.</p>
+            <a href="404.html" class="link">Learn More</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5 : LIVE SCHEDULE -->
+  <section class="section" id="schedule">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">Live Updates</span>
+        <h2>Today's <span>Train Schedule</span></h2>
+        <p>Real-time departure status for major routes across the network.</p>
+      </div>
+      <div class="schedule-wrap reveal">
+        <table class="schedule-table" id="scheduleTable">
+          <thead>
+            <tr>
+              <th>Train No.</th>
+              <th>Train Name</th>
+              <th>Route</th>
+              <th>Departure</th>
+              <th>Arrival</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="train-no">12001</td>
+              <td class="train-name">Shatabdi Express</td>
+              <td>Delhi → Kanpur</td>
+              <td>06:00 AM</td>
+              <td>10:10 AM</td>
+              <td><span class="status-badge status-on-time">On Time</span></td>
+            </tr>
+            <tr>
+              <td class="train-no">12301</td>
+              <td class="train-name">Rajdhani Express</td>
+              <td>Delhi → Kolkata</td>
+              <td>04:55 PM</td>
+              <td>09:55 AM</td>
+              <td><span class="status-badge status-delayed">Delayed 20m</span></td>
+            </tr>
+            <tr>
+              <td class="train-no">12951</td>
+              <td class="train-name">Mumbai Rajdhani</td>
+              <td>Mumbai → Delhi</td>
+              <td>05:00 PM</td>
+              <td>08:30 AM</td>
+              <td><span class="status-badge status-on-time">On Time</span></td>
+            </tr>
+            <tr>
+              <td class="train-no">12621</td>
+              <td class="train-name">Tamil Nadu Express</td>
+              <td>Chennai → Delhi</td>
+              <td>10:15 PM</td>
+              <td>04:40 AM</td>
+              <td><span class="status-badge status-cancelled">Cancelled</span></td>
+            </tr>
+            <tr>
+              <td class="train-no">12901</td>
+              <td class="train-name">Gujarat Mail</td>
+              <td>Mumbai → Ahmedabad</td>
+              <td>09:35 PM</td>
+              <td>04:45 AM</td>
+              <td><span class="status-badge status-on-time">On Time</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6 : ABOUT PREVIEW + STATS -->
+  <section class="section section-alt" id="about">
+    <div class="container">
+      <div class="split">
+        <div class="media reveal">
+          <img src="images/passenger-train.webp" alt="Passenger train on platform">
+          <div class="badge-float">
+            <i class="fa-solid fa-calendar-check"></i>
+            <div><strong data-count="25">0</strong><span>Years of Service</span></div>
+          </div>
+        </div>
+        <div class="content reveal">
+          <span class="tag">About Railway Services</span>
+          <h2>Connecting People, Cities &amp; Dreams Since 1998</h2>
+          <p>For over two decades, we have been the heartbeat of the nation's rail network — safely moving millions of passengers and tonnes of freight every single day.</p>
+          <ul class="check-list">
+            <li><i class="fa-solid fa-circle-check"></i> Nationwide network spanning 7,200+ destinations</li>
+            <li><i class="fa-solid fa-circle-check"></i> Modern fleet with smart, eco-friendly trains</li>
+            <li><i class="fa-solid fa-circle-check"></i> Award-winning on-time performance</li>
+          </ul>
+          <a href="404.html" class="btn btn-navy">Discover Our Story</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6b : STATS BAND -->
+  <section class="stats-band">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat reveal"><h3><span data-count="12500">0</span>+</h3><p>Trains Every Day</p></div>
+        <div class="stat reveal"><h3><span data-count="7200">0</span>+</h3><p>Destinations Served</p></div>
+        <div class="stat reveal"><h3><span data-count="15000">0</span>+</h3><p>Stations Network</p></div>
+        <div class="stat reveal"><h3><span data-count="2">0</span>.4B</h3><p>Passengers / Year</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7 : GALLERY -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">Gallery</span>
+        <h2>Moments From The <span>Rails</span></h2>
+        <p>A visual journey through our stations, trains, and the people who make travel magical.</p>
+      </div>
+      <div class="gallery-grid">
+        <figure class="gallery-item tall reveal" data-caption="Rajdhani Express at Dawn">
+          <img src="images/engine-front.webp" alt="Train engine front view" loading="lazy">
+          <figcaption class="overlay"><h4>Engine at Dawn</h4><span>View Gallery</span></figcaption>
+        </figure>
+        <figure class="gallery-item reveal" data-caption="Historic station clock">
+          <img src="images/station-clock.webp" alt="Railway station clock" loading="lazy">
+          <figcaption class="overlay"><h4>Station Clock</h4><span>View Gallery</span></figcaption>
+        </figure>
+        <figure class="gallery-item reveal" data-caption="Comfortable coach interior">
+          <img src="images/train-interior.webp" alt="Train coach interior" loading="lazy">
+          <figcaption class="overlay"><h4>Coach Interior</h4><span>View Gallery</span></figcaption>
+        </figure>
+        <figure class="gallery-item reveal" data-caption="Passengers on the platform">
+          <img src="images/passengers-platform.webp" alt="Passengers on railway platform" loading="lazy">
+          <figcaption class="overlay"><h4>Platform Life</h4><span>View Gallery</span></figcaption>
+        </figure>
+        <figure class="gallery-item reveal" data-caption="Signal and control system">
+          <img src="images/railway-signal.webp" alt="Railway signal system" loading="lazy">
+          <figcaption class="overlay"><h4>Signal System</h4><span>View Gallery</span></figcaption>
+        </figure>
+        <figure class="gallery-item reveal" data-caption="Night express train">
+          <img src="images/night-train.webp" alt="Night train journey" loading="lazy">
+          <figcaption class="overlay"><h4>Night Express</h4><span>View Gallery</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8 : TESTIMONIALS -->
+  <section class="section section-alt" id="testimonials">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">Testimonials</span>
+        <h2>What Our <span>Passengers Say</span></h2>
+        <p>Real stories from travellers who trust us with their journeys.</p>
+      </div>
+      <div class="testimonials-grid reveal">
+          <div class="testimonial-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <blockquote>"Booking my Rajdhani ticket took less than a minute. The live tracking feature helped my family plan pickup perfectly. Absolutely seamless!"</blockquote>
+            <div class="author">
+              <img src="images/passengers-platform.webp" alt="Priya Sharma">
+              <div><strong>Priya Sharma</strong><span>Delhi</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <blockquote>"The freight service moved our entire shipment on time and at a fraction of the road cost. Our logistics partner for life."</blockquote>
+            <div class="author">
+              <img src="images/freight-train.webp" alt="Rahul Mehta">
+              <div><strong>Rahul Mehta</strong><span>Mumbai</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+            <blockquote>"Took the heritage toy train last weekend — the booking, the coach, the food, everything was top class. A memory to treasure!"</blockquote>
+            <div class="author">
+              <img src="images/mountain-train.webp" alt="Ananya Iyer">
+              <div><strong>Ananya Iyer</strong><span>Bengaluru</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <blockquote>"The onboard food ordering is a game-changer. Our dinner arrived at the seat piping hot, right before the pantry car closed. Brilliant service!"</blockquote>
+            <div class="author">
+              <img src="images/night-train.webp" alt="Vikram Singh">
+              <div><strong>Vikram Singh</strong><span>Jaipur</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+            <blockquote>"As a senior citizen, the wheelchair assistance and priority boarding made my overnight journey completely stress-free. Thank you, team!"</blockquote>
+            <div class="author">
+              <img src="images/catering.webp" alt="Neha Gupta">
+              <div><strong>Neha Gupta</strong><span>Chennai</span></div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+  <!-- SECTION 9 : BLOG PREVIEW -->
+  <section class="section" id="blog">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">Travel Journal</span>
+        <h2>Latest From Our <span>Blog</span></h2>
+        <p>Tips, guides, and stories to make your railway travels richer.</p>
+      </div>
+      <div class="blog-grid">
+        <article class="blog-card reveal">
+          <div class="thumb">
+            <img src="images/train-window.webp" alt="Scenic view from train window" loading="lazy">
+            <span class="cat">Travel Tips</span>
+          </div>
+          <div class="body">
+            <div class="blog-meta"><span><i class="fa-regular fa-calendar"></i> July 28, 2026</span><span><i class="fa-regular fa-comment"></i> 24</span></div>
+            <h3><a href="blog.html">10 Stunning Scenic Routes You Must Experience by Train</a></h3>
+            <p>From coastal cliffs to Himalayan passes, these rail journeys redefine the meaning of beautiful travel.</p>
+            <a href="404.html" class="read-more">Read Article</a>
+          </div>
+        </article>
+        <article class="blog-card reveal">
+          <div class="thumb">
+            <img src="images/train-ticket.webp" alt="Booking a train ticket" loading="lazy">
+            <span class="cat">Booking Guide</span>
+          </div>
+          <div class="body">
+            <div class="blog-meta"><span><i class="fa-regular fa-calendar"></i> July 20, 2026</span><span><i class="fa-regular fa-comment"></i> 18</span></div>
+            <h3><a href="blog.html">How to Get Confirmed Train Tickets Even in Peak Season</a></h3>
+            <p>Smart strategies — from Tatkal timing to alternate trains — that beat the last-minute rush.</p>
+            <a href="404.html" class="read-more">Read Article</a>
+          </div>
+        </article>
+        <article class="blog-card reveal">
+          <div class="thumb">
+            <img src="images/catering.webp" alt="Onboard catering food" loading="lazy">
+            <span class="cat">Onboard Life</span>
+          </div>
+          <div class="body">
+            <div class="blog-meta"><span><i class="fa-regular fa-calendar"></i> July 12, 2026</span><span><i class="fa-regular fa-comment"></i> 31</span></div>
+            <h3><a href="blog.html">A Foodie's Guide to Ordering Delicious Meals Onboard</a></h3>
+            <p>From regional thalis to fresh pizza, here's how to eat like royalty while the train rolls on.</p>
+            <a href="404.html" class="read-more">Read Article</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 10 : NEWSLETTER / CTA -->
+  <section class="section section-alt" id="newsletter">
+    <div class="container">
+      <div class="newsletter reveal">
+        <div class="nl-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+        <h2>Subscribe to Our Newsletter</h2>
+        <p>Get exclusive offers, new route alerts, and travel tips delivered straight to your inbox every week.</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" placeholder="Enter your email address" required>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="index.html" class="brand">
+            <img src="images/logo.webp" alt="Railway Services" class="brand-img">
+          </a>
+          <p>Delivering safe, punctual, and comfortable rail travel to over 12 million passengers every year since 1998.</p>
+          <div class="socials">
+            <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right"></i> Services</a></li>
+            <li><a href="blog.html"><i class="fa-solid fa-chevron-right"></i> Blog</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Our Services</h4>
+          <ul class="footer-links">
+            <li><a href="404.html"><i class="fa-solid fa-chevron-right"></i> Ticket Booking</a></li>
+            <li><a href="404.html"><i class="fa-solid fa-chevron-right"></i> Freight &amp; Cargo</a></li>
+            <li><a href="404.html"><i class="fa-solid fa-chevron-right"></i> Live Tracking</a></li>
+            <li><a href="404.html"><i class="fa-solid fa-chevron-right"></i> Onboard Catering</a></li>
+            <li><a href="404.html"><i class="fa-solid fa-chevron-right"></i> Heritage Tours</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact Info</h4>
+          <ul class="footer-contact">
+            <li><i class="fa-solid fa-location-dot"></i> MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, Salem, Tamil Nadu 636008</li>
+            <li><i class="fa-brands fa-whatsapp"></i> WhatsApp: +91 70107 92745</li>
+            <li><i class="fa-solid fa-envelope"></i> info@thestackly.com</li>
+            <li><i class="fa-solid fa-envelope"></i> thestackly@gmail.com</li>
+            <li><i class="fa-regular fa-clock"></i> Mon - Sun : 24x7 Open</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        © 2026 <a href="index.html">Railway Services</a>. All rights reserved. | Made with <i class="fa-solid fa-heart" style="color:var(--accent)"></i> for travellers.
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <button class="lightbox-nav prev" id="lightboxPrev">&#10094;</button>
+    <img id="lightboxImg" src="" alt="Gallery preview">
+    <button class="lightbox-nav next" id="lightboxNext">&#10095;</button>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

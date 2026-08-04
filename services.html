@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore Railway Services - ticket booking, freight, catering, live tracking, heritage tours and more premium rail services.">
+  <title>Our Services | Railway Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-train"><i class="fa-solid fa-train-subway"></i></div>
+    <div class="preloader-track"><span></span></div>
+    <p>All Aboard...</p>
+  </div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="container">
+      <span><i class="fa-brands fa-whatsapp"></i> WhatsApp: +91 70107 92745</span>
+      <span class="right">
+        <a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="404.html"><i class="fa-brands fa-twitter"></i></a>
+        <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+        <a href="404.html"><i class="fa-brands fa-youtube"></i></a>
+      </span>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <img src="images/logo.webp" alt="Railway Services" class="brand-img">
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <div class="nav-auth">
+          <a href="signin.html" class="nav-btn nav-ghost"><i class="fa-solid fa-right-to-bracket"></i> Sign In</a>
+          <a href="signup.html" class="nav-btn nav-solid"><i class="fa-solid fa-user-plus"></i> Sign Up</a>
+        </div>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- SECTION 1 : PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Our Railway <span>Services</span></h1>
+      <nav class="breadcrumb">
+        <a href="index.html">Home</a> <i class="fa-solid fa-angle-right"></i> <span>Services</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- SECTION 2 : SERVICES INTRO -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">What We Provide</span>
+        <h2>Complete Rail Solutions Under <span>One Roof</span></h2>
+        <p>Whether you're a passenger, a business, or a tour operator, we have a service built around you.</p>
+      </div>
+      <div class="notice reveal">
+        <i class="fa-solid fa-circle-info"></i> All services are available through our 24x7 helpline and official app. Fares are dynamic and subject to availability.
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3 : MAIN SERVICES GRID -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="service-grid">
+        <article class="service-card reveal">
+          <div class="thumb">
+            <img src="images/passenger-train.webp" alt="Ticket booking service" loading="lazy">
+            <span class="price-tag">From ₹299</span>
+          </div>
+          <div class="body">
+            <h3>Ticket Booking</h3>
+            <p>Instant online booking across all classes with seat selection, e-tickets, and paperless travel.</p>
+            <a href="404.html" class="link">Book Now</a>
+          </div>
+        </article>
+        <article class="service-card reveal">
+          <div class="thumb">
+            <img src="images/freight-train.webp" alt="Freight and cargo service" loading="lazy">
+            <span class="price-tag">Custom Rates</span>
+          </div>
+          <div class="body">
+            <h3>Freight &amp; Cargo</h3>
+            <p>Dedicated rakes, containers for seamless bulk goods movement nationwide.</p>
+            <a href="404.html" class="link">Get A Quote</a>
+          </div>
+        </article>
+        <article class="service-card reveal">
+          <div class="thumb">
+            <img src="images/metro-train.webp" alt="Metro and city rail service" loading="lazy">
+            <span class="price-tag">Daily Pass</span>
+          </div>
+          <div class="body">
+            <h3>Metro &amp; City Rail</h3>
+            <p>Fast, frequent urban transit connecting key areas with contactless smart-card travel.</p>
+            <a href="404.html" class="link">Learn More</a>
+          </div>
+        </article>
+        <article class="service-card reveal">
+          <div class="thumb">
+            <img src="images/mountain-train.webp" alt="Heritage toy train service" loading="lazy">
+            <span class="price-tag">Special Tours</span>
+          </div>
+          <div class="body">
+            <h3>Heritage &amp; Toy Trains</h3>
+            <p>Ride UNESCO heritage mountain railways through valleys, gorges, and hill stations.</p>
+            <a href="404.html" class="link">Book Tour</a>
+          </div>
+        </article>
+        <article class="service-card reveal">
+          <div class="thumb">
+            <img src="images/catering.webp" alt="Onboard catering service" loading="lazy">
+            <span class="price-tag">From ₹99</span>
+          </div>
+          <div class="body">
+            <h3>Onboard Catering</h3>
+            <p>Regional thalis, continental meals, and snacks delivered to your seat with a live order tracker.</p>
+            <a href="404.html" class="link">Order Food</a>
+          </div>
+        </article>
+        <article class="service-card reveal">
+          <div class="thumb">
+            <img src="images/railway-track.webp" alt="Track maintenance service" loading="lazy">
+            <span class="price-tag">Corporate</span>
+          </div>
+          <div class="body">
+            <h3>Rail Infrastructure</h3>
+            <p>Track maintenance, signalling, and station modernisation projects for rail authorities.</p>
+            <a href="404.html" class="link">Partner With Us</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4 : HOW IT WORKS (PROCESS) -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">Simple Process</span>
+        <h2>How Our Booking <span>Works</span></h2>
+        <p>Four easy steps from search to seat — no queues, no paperwork.</p>
+      </div>
+      <div class="process-grid">
+        <div class="process-card reveal">
+          <i class="fa-solid fa-magnifying-glass-location"></i>
+          <h3>Search</h3>
+          <p>Enter your route, date, and class to browse available trains instantly.</p>
+        </div>
+        <div class="process-card reveal">
+          <i class="fa-solid fa-ticket"></i>
+          <h3>Select</h3>
+          <p>Pick the best train, seat, and fare that fits your journey and budget.</p>
+        </div>
+        <div class="process-card reveal">
+          <i class="fa-solid fa-credit-card"></i>
+          <h3>Pay</h3>
+          <p>Checkout securely with UPI, cards, netbanking, or wallets.</p>
+        </div>
+        <div class="process-card reveal">
+          <i class="fa-solid fa-train"></i>
+          <h3>Travel</h3>
+          <p>Show your e-ticket on the app and enjoy a smooth, paperless ride.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5 : PRICING -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">Membership</span>
+        <h2>Simple, Transparent <span>Pricing</span></h2>
+        <p>Choose the plan that matches how often you ride the rails.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="price-card reveal">
+          <h3>Casual Traveller</h3>
+          <div class="price">Free<small> / no charge</small></div>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Instant ticket booking</li>
+            <li><i class="fa-solid fa-check"></i> Live train tracking</li>
+            <li><i class="fa-solid fa-check"></i> SMS + email updates</li>
+            <li><i class="fa-solid fa-xmark"></i> Priority cancellation refunds</li>
+            <li><i class="fa-solid fa-xmark"></i> Lounge access at stations</li>
+          </ul>
+          <a href="404.html" class="btn btn-ghost">Get Started</a>
+        </div>
+        <div class="price-card featured reveal">
+          <h3>Frequent Flyer</h3>
+          <div class="price">₹499<small> / per year</small></div>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Everything in Casual</li>
+            <li><i class="fa-solid fa-check"></i> 5% off on every booking</li>
+            <li><i class="fa-solid fa-check"></i> Priority refund processing</li>
+            <li><i class="fa-solid fa-check"></i> Free coach change once</li>
+            <li><i class="fa-solid fa-check"></i> Exclusive fare alerts</li>
+          </ul>
+          <a href="404.html" class="btn btn-primary">Join Now</a>
+        </div>
+        <div class="price-card reveal">
+          <h3>Business Partner</h3>
+          <div class="price">Custom<small> / negotiated</small></div>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Everything in Frequent</li>
+            <li><i class="fa-solid fa-check"></i> Dedicated account manager</li>
+            <li><i class="fa-solid fa-check"></i> Freight priority corridors</li>
+            <li><i class="fa-solid fa-check"></i> Lounge &amp; VIP station access</li>
+            <li><i class="fa-solid fa-check"></i> Monthly billing &amp; reports</li>
+          </ul>
+          <a href="404.html" class="btn btn-ghost">Talk To Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6 : VALUE ADDED SERVICES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">Extras</span>
+        <h2>Value-Added <span>Facilities</span></h2>
+        <p>Small touches that make every journey considerably better.</p>
+      </div>
+      <div class="value-grid">
+        <div class="value-card reveal">
+          <i class="fa-solid fa-location-crosshairs"></i>
+          <div>
+            <h3>Live Train Tracking</h3>
+            <p>Real-time position, speed, and arrival predictions for any train in the network.</p>
+          </div>
+        </div>
+        <div class="value-card reveal">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <div>
+            <h3>Luggage Assistance</h3>
+            <p>Porter booking, luggage transfer, and parcel services right from your platform.</p>
+          </div>
+        </div>
+        <div class="value-card reveal">
+          <i class="fa-solid fa-wheelchair-move"></i>
+          <div>
+            <h3>Senior &amp; Special Care</h3>
+            <p>Wheelchair assistance, accessible coaches, and priority boarding for everyone.</p>
+          </div>
+        </div>
+        <div class="value-card reveal">
+          <i class="fa-solid fa-wifi"></i>
+          <div>
+            <h3>Station Wi-Fi &amp; Lounges</h3>
+            <p>High-speed internet and premium lounges at 100+ major stations.</p>
+          </div>
+        </div>
+        <div class="value-card reveal">
+          <i class="fa-solid fa-hotel"></i>
+          <div>
+            <h3>Railway Hotels</h3>
+            <p>Comfortable stay options at select stations for long layovers.</p>
+          </div>
+        </div>
+        <div class="value-card reveal">
+          <i class="fa-solid fa-route"></i>
+          <div>
+            <h3>Tour Packages</h3>
+            <p>Curated rail-cum-hotel itineraries to the country's most beautiful destinations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7 : FAQ -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">Need Help?</span>
+        <h2>Frequently Asked <span>Questions</span></h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <button class="faq-question">How do I book a train ticket? <i class="fa-solid fa-chevron-down"></i></button>
+          <div class="faq-answer"><p>Use the search widget on the home page or our mobile app. Select your route, date, and class, then pay securely to receive an instant e-ticket.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question">What is the cancellation and refund policy? <i class="fa-solid fa-chevron-down"></i></button>
+          <div class="faq-answer"><p>Cancellations made up to 48 hours before departure get an 80% refund, up to 12 hours a 60% refund. Cancellation charges are shown before you confirm.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question">Can I change my travel date or coach after booking? <i class="fa-solid fa-chevron-down"></i></button>
+          <div class="faq-answer"><p>Yes. Date changes are allowed subject to availability, and one free coach change is included with Frequent Flyer and Business plans.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question">How do I track my freight shipment? <i class="fa-solid fa-chevron-down"></i></button>
+          <div class="faq-answer"><p>Log in to your freight dashboard using your consignment number to view live location, delivery estimates, and e-way bills.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-question">Do you offer assistance for senior citizens and disabled passengers? <i class="fa-solid fa-chevron-down"></i></button>
+          <div class="faq-answer"><p>Absolutely. Free wheelchair assistance, priority boarding, and accessible coaches can be requested while booking or via the helpline.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8 : CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-band reveal">
+        <div>
+          <h2>Have A Question Or Custom Requirement?</h2>
+          <p>Our service team is available 24x7. Reach out and we'll craft the perfect solution for you.</p>
+        </div>
+        <a href="404.html" class="btn btn-primary"><i class="fa-solid fa-headset"></i> Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="index.html" class="brand">
+            <img src="images/logo.webp" alt="Railway Services" class="brand-img">
+          </a>
+          <p>Delivering safe, punctual, and comfortable rail travel to over 12 million passengers every year since 1998.</p>
+          <div class="socials">
+            <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right"></i> Services</a></li>
+            <li><a href="blog.html"><i class="fa-solid fa-chevron-right"></i> Blog</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Our Services</h4>
+          <ul class="footer-links">
+            <li><a href="404.html"><i class="fa-solid fa-chevron-right"></i> Ticket Booking</a></li>
+            <li><a href="404.html"><i class="fa-solid fa-chevron-right"></i> Freight &amp; Cargo</a></li>
+            <li><a href="404.html"><i class="fa-solid fa-chevron-right"></i> Live Tracking</a></li>
+            <li><a href="404.html"><i class="fa-solid fa-chevron-right"></i> Onboard Catering</a></li>
+            <li><a href="404.html"><i class="fa-solid fa-chevron-right"></i> Heritage Tours</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact Info</h4>
+          <ul class="footer-contact">
+            <li><i class="fa-solid fa-location-dot"></i> MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, Salem, Tamil Nadu 636008</li>
+            <li><i class="fa-brands fa-whatsapp"></i> WhatsApp: +91 70107 92745</li>
+            <li><i class="fa-solid fa-envelope"></i> info@thestackly.com</li>
+            <li><i class="fa-solid fa-envelope"></i> thestackly@gmail.com</li>
+            <li><i class="fa-regular fa-clock"></i> Mon - Sun : 24x7 Open</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        © 2026 <a href="index.html">Railway Services</a>. All rights reserved. | Made with <i class="fa-solid fa-heart" style="color:var(--accent)"></i> for travellers.
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
