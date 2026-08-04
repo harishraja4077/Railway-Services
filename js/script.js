@@ -18,30 +18,52 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 
-    /* ---------------- Mobile hamburger menu ---------------- */
+    /* ---------------- Mobile drawer menu ---------------- */
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
+    const menuBackdrop = document.getElementById('menuBackdrop');
+    const drawerClose = document.querySelector('.drawer-close');
 
     if (hamburger && navLinks) {
-      function toggleMenu(force) {
-        const open = typeof force === 'boolean' ? force : !navLinks.classList.contains('open');
+      function setMenu(open) {
         hamburger.classList.toggle('open', open);
         navLinks.classList.toggle('open', open);
-        document.body.style.overflow = open ? 'hidden' : '';
+        if (menuBackdrop) menuBackdrop.classList.toggle('show', open);
+        hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        document.documentElement.style.overflow = open ? 'hidden' : '';
+        if (open) {
+          const firstLink = navLinks.querySelector('a:not(.drawer-brand)');
+          if (firstLink) firstLink.focus({ preventScroll: true });
+        } else if (document.activeElement && navLinks.contains(document.activeElement)) {
+          hamburger.focus();
+        }
       }
+      function toggleMenu(force) {
+        setMenu(typeof force === 'boolean' ? force : !navLinks.classList.contains('open'));
+      }
+
       hamburger.addEventListener('click', function () {
         toggleMenu();
+      });
+      if (drawerClose) drawerClose.addEventListener('click', function () {
+        toggleMenu(false);
+      });
+      if (menuBackdrop) menuBackdrop.addEventListener('click', function () {
+        toggleMenu(false);
       });
       navLinks.querySelectorAll('a').forEach(function (link) {
         link.addEventListener('click', function () {
           toggleMenu(false);
         });
       });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+          toggleMenu(false);
+        }
+      });
       window.addEventListener('resize', function () {
-        if (window.innerWidth > 768) {
-          hamburger.classList.remove('open');
-          navLinks.classList.remove('open');
-          document.body.style.overflow = '';
+        if (window.innerWidth > 768 && navLinks.classList.contains('open')) {
+          setMenu(false);
         }
       });
     }

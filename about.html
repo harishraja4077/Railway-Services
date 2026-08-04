@@ -42,7 +42,14 @@
       <a href="index.html" class="brand">
         <img src="images/logo.webp" alt="Railway Services" class="brand-img">
       </a>
-      <nav class="nav-links" id="navLinks">
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <div class="drawer-header">
+          <a href="index.html" class="drawer-brand">
+            <i class="fa-solid fa-train-subway"></i>
+            <span>Railway Services<small>TRAIN BOOKING</small></span>
+          </a>
+          <button type="button" class="drawer-close" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+        </div>
         <a href="index.html">Home</a>
         <a href="about.html" class="active">About</a>
         <a href="services.html">Services</a>
@@ -53,11 +60,13 @@
           <a href="signup.html" class="nav-btn nav-solid"><i class="fa-solid fa-user-plus"></i> Sign Up</a>
         </div>
       </nav>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
+
+  <div class="menu-backdrop" id="menuBackdrop" aria-hidden="true"></div>
 
   <!-- SECTION 1 : PAGE HERO -->
   <section class="page-hero">

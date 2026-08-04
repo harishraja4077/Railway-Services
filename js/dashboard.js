@@ -396,16 +396,14 @@
       });
     }
 
-    /* ---------------- All dashboard buttons -> 404 ---------------- */
+    /* ---------------- Placeholder buttons -> 404 ---------------- */
     document.addEventListener('click', function (e) {
-      const btn = e.target.closest ? e.target.closest('button') : null;
-      if (!btn) return;
-      const exempt = ['logoutBtn', 'dashMenu', 'notifToggle'];
-      if (exempt.indexOf(btn.id) !== -1) return;
-      e.preventDefault();
-      e.stopImmediatePropagation();
-      window.location.href = '404.html';
-    }, true);
+      const btn = e.target.closest ? e.target.closest('.go404') : null;
+      if (btn) {
+        e.preventDefault();
+        window.location.href = '404.html';
+      }
+    });
 
   });
 })();

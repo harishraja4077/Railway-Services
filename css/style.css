@@ -41,6 +41,7 @@ body {
   background: var(--white);
   line-height: 1.7;
   overflow-x: hidden;
+  overflow-x: clip;
 }
 
 img {
@@ -192,9 +193,7 @@ ul {
 }
 
 .navbar {
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.96);
   padding: 15px 0;
   box-shadow: 0 1px 0 rgba(11, 27, 58, 0.06), 0 14px 34px rgba(11, 27, 58, 0.06);
   position: sticky;
@@ -216,9 +215,7 @@ ul {
 }
 
 .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.98);
   padding: 9px 0;
   box-shadow: 0 1px 0 rgba(11, 27, 58, 0.08), 0 10px 32px rgba(11, 27, 58, 0.12);
 }
@@ -415,6 +412,31 @@ ul {
 
 .hamburger.open span:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
+}
+
+/* --- Mobile drawer internals (hidden on desktop) --- */
+.nav-links .drawer-header,
+.drawer-brand,
+.drawer-close {
+  display: none;
+}
+
+/* --- Backdrop behind mobile drawer --- */
+.menu-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1055;
+  background: rgba(11, 27, 58, 0.55);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.menu-backdrop.show {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* ==========================================================================
@@ -2271,32 +2293,122 @@ ul {
     margin-bottom: 44px;
   }
 
+  /* --- Mobile full-screen menu --- */
+  .nav-links .drawer-header {
+    display: flex;
+  }
+
   .nav-links {
     position: fixed;
     top: 0;
-    right: -100%;
+    left: 0;
     width: 100%;
     height: 100vh;
     height: 100dvh;
-    background: linear-gradient(160deg, var(--navy) 0%, var(--primary) 60%, var(--primary-light) 100%);
+    background: linear-gradient(160deg, var(--navy) 0%, var(--primary) 55%, var(--primary-light) 100%);
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 96px 28px 40px;
-    transition: right 0.4s ease;
-    z-index: 1050;
+    justify-content: flex-start;
+    gap: 4px;
+    padding: 0 28px 30px;
     overflow-y: auto;
+    transform: translateX(-100%);
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1), visibility 0s linear 0.42s;
+    z-index: 1105;
   }
 
   .nav-links.open {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+    transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1), visibility 0s;
+  }
+
+  .drawer-header {
+    position: absolute;
+    top: 0;
+    left: 0;
     right: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    flex-shrink: 0;
+  }
+
+  .drawer-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+  }
+
+  .drawer-brand i {
+    width: 40px;
+    height: 40px;
+    border-radius: 11px;
+    background: rgba(245, 124, 0, 0.16);
+    color: var(--accent);
+    font-size: 1.05rem;
+    display: grid;
+    place-items: center;
+  }
+
+  .drawer-brand > span {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+  }
+
+  .drawer-brand small {
+    display: block;
+    font-size: 0.6rem;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .drawer-close {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+
+  .drawer-close:hover {
+    background: var(--accent);
+    transform: rotate(90deg);
+  }
+
+  .nav-links > a:first-of-type {
+    margin-top: auto;
   }
 
   .nav-links > a {
-    font-size: 1.15rem;
-    color: #e6ecf7;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 36px;
+    font-size: 1.2rem;
     font-weight: 600;
+    color: #e6ecf7;
+    border-radius: 50px;
+  }
+
+  .nav-links > a::after {
+    display: none;
   }
 
   .nav-links > a:hover,
@@ -2308,18 +2420,18 @@ ul {
   .nav-auth {
     flex-direction: column;
     align-items: stretch;
-    width: 100%;
-    max-width: 320px;
+    width: min(320px, 100%);
     gap: 12px;
-    margin: 22px 0 0;
-    padding-top: 22px;
+    margin-top: 26px;
+    margin-bottom: auto;
+    padding-top: 24px;
     border-top: 1px solid rgba(255, 255, 255, 0.16);
   }
 
   .nav-links .nav-btn {
     justify-content: center;
-    padding: 13px 22px;
-    font-size: 0.95rem;
+    padding: 12px 22px;
+    font-size: 0.92rem;
     width: 100%;
   }
 
@@ -2475,10 +2587,6 @@ ul {
   .error-code {
     font-size: 4rem;
     letter-spacing: 2px;
-  }
-
-  .nav-links {
-    padding: 92px 26px 28px;
   }
 
   .testimonials-grid .testimonial-card {
@@ -2982,26 +3090,26 @@ html {
   transform: scale(1.07);
 }
 
-/* ---------- Mobile menu staggered links ---------- */
+/* ---------- Mobile menu staggered items ---------- */
 @media (max-width: 768px) {
-  .nav-links a {
+  .nav-links > * {
     opacity: 0;
     transform: translateX(28px);
-    transition: opacity 0.35s ease, transform 0.35s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
-  .nav-links.open a {
+  .nav-links.open > * {
     opacity: 1;
     transform: translateX(0);
   }
 
-  .nav-links a:nth-child(1) { transition-delay: 0.08s; }
-  .nav-links a:nth-child(2) { transition-delay: 0.14s; }
-  .nav-links a:nth-child(3) { transition-delay: 0.2s; }
-  .nav-links a:nth-child(4) { transition-delay: 0.26s; }
-  .nav-links a:nth-child(5) { transition-delay: 0.32s; }
-  .nav-links a:nth-child(6) { transition-delay: 0.38s; }
-  .nav-links a:nth-child(7) { transition-delay: 0.44s; }
+  .nav-links.open > :nth-child(1) { transition-delay: 0.06s; }
+  .nav-links.open > :nth-child(2) { transition-delay: 0.12s; }
+  .nav-links.open > :nth-child(3) { transition-delay: 0.18s; }
+  .nav-links.open > :nth-child(4) { transition-delay: 0.24s; }
+  .nav-links.open > :nth-child(5) { transition-delay: 0.3s; }
+  .nav-links.open > :nth-child(6) { transition-delay: 0.36s; }
+  .nav-links.open > :nth-child(7) { transition-delay: 0.42s; }
 }
 
 /* ---------- Reduced motion preference ---------- */
